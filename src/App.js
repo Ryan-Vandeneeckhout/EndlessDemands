@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import './Setup.css'; 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useState } from 'react'; 
+import HomePage from './pages/HomePage.js';
+import AboutPage from './pages/AboutPage.js';
+import ProductPage from './pages/APIStorePages/ProductPage.js';
+import SephoaraPage from './pages/APIStorePages/SephoaraPage.js';
+import UserStoreInputCallAPIAndStoreItemCointainer from './components/mainStore/UserStoreInputCallAPIAndStoreItemCointainer.js';
+import ThemeChanger from './components/NavBar/ThemeChanger.js'; 
+import NavBarUpperSite from './components/NavBar/NavBarUpperSite.js'; 
+import NavMobile from "./components/NavBar/MobileNav.js";
 
 function App() {
+  
+  const [showbox, setShowBox] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false); 
+
+  const ChangeStateFunction = () => {
+    setShowBox(showbox => !showbox);
+    setMobileNav(false); 
+  }
+
+  const MobileNavFunction = () => { 
+    setMobileNav(mobileNav => !mobileNav);
+    setShowBox(false); 
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <BrowserRouter>
+      <NavBarUpperSite mobileNav={mobileNav} MobileNavFunction={MobileNavFunction} ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
+        <ThemeChanger showbox={showbox} />
+        <NavMobile mobileNav={mobileNav} MobileNavFunction={MobileNavFunction}/>
+        <Routes>
+        <Route extact path='/' element={<HomePage />}/>
+          <Route extact path='/storecatalogue' element={<UserStoreInputCallAPIAndStoreItemCointainer />} />
+          <Route extact path='/aboutpage' element={<AboutPage />} />
+          <Route path="/:itemid" element={<ProductPage />} />
+          <Route path="api/sep/:productscurrentSkuskuId/:productId" element={<SephoaraPage />} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 

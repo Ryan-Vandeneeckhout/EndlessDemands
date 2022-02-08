@@ -1,0 +1,77 @@
+.storeFront {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.One {
+  height: auto;
+  min-height: 40vh;
+  min-width: 50vw;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8b0000;
+  border-right: solid goldenrod 5px;
+  flex-direction: column;
+}
+.One h3 {
+  color: white;
+  font-family: Raleway;
+  font-size: 68px;
+  letter-spacing: 3px;
+  text-shadow: 5px 4px 0px black;
+}
+.Two {
+  height: auto;
+  max-width: 100%;
+  min-width: 50vw;
+  display: flex;
+  justify-content: center;
+  background-color: darkblue;
+  position: relative;
+}
+.Two ul {
+  position: absolute;
+  left: 0;
+  border: green solid 5px;
+  min-height: 100%;
+  padding: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0;
+  width: 20%;
+  padding-inline-start: 0;
+}
+.Two li {
+  width: 100%;
+  border: solid gold;
+}
+.Two img {
+  height: auto;
+  max-width: 100%;
+}
+
+.Three {
+  min-height: 45vh;
+  min-width: 50vw;
+  width: 100%;
+  height: 100%;
+  border-top: goldenrod solid 5px;
+  background-color: rebeccapurple;
+}
+.storeFrontbuttonsList {
+  margin-top: 50px;
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 725px) {
+  .storeFront {
+    display: flex;
+    flex-direction: column;
+  }
+}

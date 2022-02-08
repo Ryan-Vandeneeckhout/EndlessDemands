@@ -1,0 +1,108 @@
+.upperSite {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: var(--color-Nav);
+  border-bottom: goldenrod solid 4px;
+  z-index: 100;
+  position: fixed;
+  align-items: center;
+  padding: 0 5%;
+  height: 85px;
+}
+
+.upperSite ul {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.upperSite ul li {
+  padding: 25px;
+  margin: 0;
+}
+
+.upperSite ul a {
+  text-decoration: none;
+  padding: 0;
+  text-transform: uppercase;
+  color: var(--color-Nav-font);
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.upperSite ul li:hover a {
+  color: gold;
+}
+
+.rotating {
+  transform: rotate(360deg);
+}
+.themeClick {
+  font-size: 30px;
+  border-radius: 90%;
+  border: none;
+  transition: ease-in-out 0.5s;
+  border: solid black 3px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.NavMobile {
+  font-size: 30px;
+  border-radius: 90%;
+  border: none;
+  transition: ease-in-out 0.5s;
+  border: solid black 3px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.NavMobile:hover {
+  color: white;
+  background-color: black;
+  border: solid white 3px;
+  cursor: pointer;
+}
+.themeClick:hover {
+  color: white;
+  background-color: black;
+  border: solid white 3px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 626px) and (max-width: 1050px) {
+  .upperSite {
+    justify-content: space-evenly;
+    padding: 0 20px;
+  }
+  .upperSite li {
+    text-align: center;
+  }
+  .upperSite span {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .upperSite ul {
+    display: none;
+    width: 100%;
+  }
+  .upperSite {
+    justify-content: space-between;
+    height: 100px;
+  }
+  .NavMobile {
+    display: flex;
+  }
+}
