@@ -1,0 +1,51 @@
+.image {
+  width: 100%;
+  height: 300px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+.productListMakeupAPI {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 50px;
+  border-top: solid gold 5px;
+  border-bottom: solid gold 5px;
+  margin: 0;
+  background-color: slategray;
+  align-items: center;
+}
+
+.productListMakeupAPI li {
+  list-style: none;
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
+  width: 300px;
+  height: 500px;
+  padding: 10px;
+  border: solid lightgrey 2px;
+  border-radius: 25px;
+  background-color: white;
+  text-align: center;
+}
+
+.productListMakeupAPI li:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+  border: solid goldenrod 5px;
+  transform: translateY(-5px);
+  background-color: black;
+  color: white;
+}
+
+.Left {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

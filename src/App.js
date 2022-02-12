@@ -10,6 +10,8 @@ import UserStoreInputCallAPIAndStoreItemCointainer from './components/mainStore/
 import ThemeChanger from './components/NavBar/ThemeChanger.js'; 
 import NavBarUpperSite from './components/NavBar/NavBarUpperSite.js'; 
 import NavMobile from "./components/NavBar/MobileNav.js";
+import BottomOfSiteFrom from './components/BottomOfSite/BottomSiteForm';
+import BottomSiteSectionContainer from './components/BottomOfSite/BottomSiteSection';
 
 function App() {
   
@@ -28,6 +30,8 @@ function App() {
 
   return (
 
+    <>
+
       <BrowserRouter>
       <NavBarUpperSite mobileNav={mobileNav} MobileNavFunction={MobileNavFunction} ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
         <ThemeChanger showbox={showbox} />
@@ -40,6 +44,8 @@ function App() {
           <Route path="api/sep/:productscurrentSkuskuId/:productId" element={<SephoaraPage />} />
         </Routes>
       </BrowserRouter>
+      <BottomSiteSectionContainer/>
+      </>
   );
 }
 
