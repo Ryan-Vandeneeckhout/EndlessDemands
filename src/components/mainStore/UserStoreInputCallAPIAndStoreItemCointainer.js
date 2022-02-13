@@ -19,13 +19,15 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     const [productCatgorySelected, setProductCatgorySelected, productCatgorySelectedRef] = useStateRef("");
     const [price, setPrice, priceRef] = useStateRef("");
     const [query, setQuery, queryRef] = useStateRef(""); 
-    const [tagArray, setTagArray] = useState([]);
     const [errorAPI, setErrorAPI] = useState(false);
     const [count, setCount] =useState(0); 
 
     const BrandInput = (e) =>{
         setBranding(e.target.value);
-        console.log(brandRef.current);
+        console.log(branding);
+        console.log(productCatgorySelected);
+        console.log(price);
+        console.log(errorAPI);
         APIMAKEUPHEROCallFunction();
         
     }
