@@ -7,7 +7,9 @@ const AudioSource = (props) => {
 
     const songPlaying = () => {
 
-        if (audioRef.current === audioRef.current && count === 1) {
+        let currentSongPlaying = audioRef.current; 
+
+        if (audioRef.current === currentSongPlaying && count === 1) {
             audioRef.current.pause();
             audioRef.current.classList.remove("currentSong"); 
             count--; 

@@ -3,7 +3,6 @@ import BrandInput from "./formInputButtons/BrandInput";
 import PriceSliderInput from "./formInputButtons/PriceSliderInput";
 import ProductCatgoryInput from "./formInputButtons/ProductCatgoryInput";
 import SearchInput from "./formInputButtons/SearchInput";
-import TaglistInput from "./formInputButtons/TaglistInput";
 
 const MainStoreForm = (props) => {
 

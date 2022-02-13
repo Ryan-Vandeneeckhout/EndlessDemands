@@ -1,15 +1,18 @@
 import ProductItem from "../../pages/ProductItem";
 
 const StoreItems = (props) => {
-  console.log(props.productItem);
 
   const renderStoreList = () => {
+ 
+        
       if (
           props.productItem !== null ||
           props.productItem !== undefined ||
           props.productItem.length !== 0 ||
           props.productItem !== "" || props.ProductItem !== []
       ) {
+
+       
       return (
           <ul className="productListMakeupAPI">
           {props.productItem.map((item) => {
