@@ -12,15 +12,39 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 50px;
   border-top: solid gold 5px;
   border-bottom: solid gold 5px;
   margin: 0;
   background-color: slategray;
   align-items: center;
+  position: relative;
 }
-
+.resultsNone {
+  min-height: 50vh;
+  height: 100%;
+  background-color: rgb(5, 5, 49);
+  align-items: flex-start;
+  justify-content: center;
+}
+.resultsNone p {
+  font-size: 28px;
+  color: white;
+  font-family: Raleway;
+}
+.initalPageLoad {
+  min-height: 50vh;
+  height: 100%;
+  background-color: rgb(5, 5, 49);
+  align-items: flex-start;
+  justify-content: center;
+}
+.initalPageLoad p {
+  font-size: 28px;
+  color: white;
+  font-family: Raleway;
+}
 .productListMakeupAPI li {
   list-style: none;
   border-radius: 25px;
@@ -34,6 +58,7 @@
   border-radius: 25px;
   background-color: white;
   text-align: center;
+  margin: 20px 20px;
 }
 
 .productListMakeupAPI li:hover {

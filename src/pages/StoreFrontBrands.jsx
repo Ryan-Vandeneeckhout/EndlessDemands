@@ -17,6 +17,7 @@ const StoreFrontBrands = (props) => {
                 responseType: "json",
                 params: {
                     product_type: `${props.productType}`,
+                    price_greater_than: 0,
                 },
         
             }).then((jsonResponse) => {
@@ -27,7 +28,7 @@ const StoreFrontBrands = (props) => {
         
             })
             console.log(individualProducts);
-        }, [])
+        }, [props.productType, individualProducts])
     
     console.log(individualProducts);
     

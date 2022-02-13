@@ -44,7 +44,7 @@ const StoreFrontHome = () => {
                 </li>
 
                 </ul>
-                <img ref={image1} className="Image" src="./homeImages/image4.jpg" />
+                <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src="./homeImages/image4.jpg" />
                 <img ref={image2} className="Image Seen" src="./homeImages/frontStore.jpg" alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
         </div>
     </div>

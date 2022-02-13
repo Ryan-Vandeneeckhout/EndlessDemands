@@ -1,12 +1,12 @@
-import Banner from "./Banner.js"; 
+import Banner from "./Banner.jsx"; 
 import "./HomePage.css";
 import StoreFrontHome from "./StoreFrontHome.jsx";
 import StoreFrontBrands from "./StoreFrontBrands.jsx";
 
 const HomePage = () => {
 
-    let lipstick = "Lipstick"; 
-    let foundation = "Foundation"; 
+    const lipstick = "Lipstick"; 
+    const foundation = "Foundation"; 
 
     return (
         <section className="homePage">

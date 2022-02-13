@@ -1,7 +1,11 @@
 import "./ThemeChanger.css";
-import SongList from "./SongList.js";
+import SongList from "./SongList.jsx";
 
 const ThemeChanger = (props) => {
+
+    if (props.showbox === false) {
+        
+    }
 
     return (
         <section className="themeChanger">

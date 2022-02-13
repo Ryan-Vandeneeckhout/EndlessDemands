@@ -1,0 +1,79 @@
+.taglistFormContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2%;
+  padding-top: 10px;
+  background-color: lightgray;
+  justify-content: center;
+}
+
+.tagListButton {
+  border: none;
+  margin: 10px;
+  width: 150px;
+  height: 50px;
+  text-transform: capitalize;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 20px;
+  border: solid rgb(116, 112, 112) 1px;
+}
+.clickedTagButton {
+  background-color: gold;
+}
+.tagListButton:hover {
+  cursor: pointer;
+  color: black;
+  -webkit-animation: color_change 1s 1 alternate;
+  -moz-animation: color_change 1s 1 alternate;
+  -ms-animation: color_change 1s 1 alternate;
+  -o-animation: color_change 1s 1 alternate;
+  animation: color_change 1s 1 alternate;
+  background-color: gold;
+}
+
+.clickedTagButton:hover {
+  background-color: gold;
+  animation: none;
+}
+@-webkit-keyframes color_change {
+  from {
+    background-color: whitesmoke;
+  }
+  to {
+    background-color: gold;
+  }
+}
+@-moz-keyframes color_change {
+  from {
+    background-color: whitesmoke;
+  }
+  to {
+    background-color: gold;
+  }
+}
+@-ms-keyframes color_change {
+  from {
+    background-color: whitesmoke;
+  }
+  to {
+    background-color: gold;
+  }
+}
+@-o-keyframes color_change {
+  from {
+    background-color: whitesmoke;
+  }
+  to {
+    background-color: gold;
+  }
+}
+@keyframes color_change {
+  from {
+    background-color: whitesmoke;
+  }
+  to {
+    background-color: gold;
+  }
+}

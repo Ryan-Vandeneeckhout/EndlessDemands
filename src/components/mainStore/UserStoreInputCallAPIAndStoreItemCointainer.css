@@ -1,0 +1,72 @@
+.storePageForm {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 30px;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.3981967787114846) 0%,
+    rgba(43, 43, 43, 0.9864320728291317) 100%
+  );
+  border: gold solid 2px;
+  border-left: none;
+  border-right: none;
+  align-items: center;
+  flex-wrap: wrap;
+}
+input[type="text"],
+select {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.categorySelect {
+  width: 300px;
+}
+.brandTypeClass {
+  text-transform: capitalize;
+}
+.searchBar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.searchIcon {
+  background-color: lightgray;
+  height: 45px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slider {
+  width: 300px;
+}
+.slider-parent {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#price {
+  position: absolute;
+  top: 40px;
+}
+.sliderStore {
+  padding: 12px 0px;
+}
+.storeSlider {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

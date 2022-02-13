@@ -10,8 +10,9 @@ import UserStoreInputCallAPIAndStoreItemCointainer from './components/mainStore/
 import ThemeChanger from './components/NavBar/ThemeChanger.js'; 
 import NavBarUpperSite from './components/NavBar/NavBarUpperSite.js'; 
 import NavMobile from "./components/NavBar/MobileNav.js";
-import BottomOfSiteFrom from './components/BottomOfSite/BottomSiteForm';
 import BottomSiteSectionContainer from './components/BottomOfSite/BottomSiteSection';
+import PlayPauseMusicButton from './components/globalButtons/PlayPauseMusicButton.jsx';
+import ScrollUpButton from './components/globalButtons/ScrollUpButton';
 
 function App() {
   
@@ -43,6 +44,8 @@ function App() {
           <Route path="/:itemid" element={<ProductPage />} />
           <Route path="api/sep/:productscurrentSkuskuId/:productId" element={<SephoaraPage />} />
         </Routes>
+        <PlayPauseMusicButton />
+        <ScrollUpButton/>
       </BrowserRouter>
       <BottomSiteSectionContainer/>
       </>

@@ -95,6 +95,14 @@
   border: solid white 3px;
   color: white;
   border-radius: 90%;
+  position: absolute;
+  top: 50%;
+}
+.Left {
+  left: 10px;
+}
+.Right {
+  right: 10px;
 }
 .buttonStoreFront:hover {
   background-color: white;
@@ -115,8 +123,6 @@
   background-repeat: no-repeat;
 }
 .top {
-  background-color: black;
-  background-image: url("../../public/homeImages/2095.jpg");
   background-color: rgb(144, 0, 0);
   background-image: url("../../public/homeImages/Y2021-02-23-18_generated.jpg");
 }

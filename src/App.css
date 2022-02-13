@@ -23,3 +23,66 @@ html[data-theme="snowy"] {
 body {
   overflow-x: hidden;
 }
+.pausePlayButton {
+  position: fixed;
+  color: white;
+  font-size: 48px;
+  bottom: 85px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  cursor: pointer;
+  border: solid gold 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90%;
+  background-color: black;
+}
+
+.pausePlayButton:hover {
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-color: white;
+  transition: ease-in-out 0.5s;
+  transform: rotate(360deg);
+}
+.scrollUp {
+  position: fixed;
+  color: white;
+  font-size: 48px;
+  bottom: 185px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  cursor: pointer;
+  border: solid gold 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90%;
+  background-color: black;
+}
+
+.scrollUp:hover {
+  color: gold;
+}
+.scrollUp:hover i {
+  animation: MoveUpDown 1s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
