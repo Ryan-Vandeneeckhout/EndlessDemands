@@ -60,3 +60,8 @@ export const SongListMap = [
    
 ];
 
+const [branding, setBranding] = useState(""); 
+    const [productTypeSelected, setProductTypeSelected] = useState(""); 
+    const [productCatgorySelected, setProductCatgorySelected] = useState("");
+    const [price, setPrice] = useState(null); 
+    const [tagArray, setTagArray] = useState([]); 
