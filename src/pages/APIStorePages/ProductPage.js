@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
+import Posts from '../../firebase/Posts';
 import './ProductPage.css';
 
 const ProductPage = () => { 
@@ -574,6 +575,8 @@ const ProductPage = () => {
         }
         
     }
+    const page = true; 
+
     const renderRating = () => {
         if(rating === null)
             return <p className='productParagraph'>Rating: Unfortunately, there is No Rating Currently Available. Be the First To Rate!</p>
@@ -666,6 +669,9 @@ const ProductPage = () => {
                 </div>
                 {renderColors()}
                 {renderTaglistHighlights()}
+                <div className='PostWrapper'>
+                    <Posts individualProducts={individualProducts} page={page} passedprops={itemid.itemid}/>
+                </div>  
             </div>
       </div>
     );

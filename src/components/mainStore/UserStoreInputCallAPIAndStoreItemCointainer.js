@@ -1,11 +1,11 @@
 import Banner from "../../pages/Banner.jsx";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useStateRef from 'react-usestateref'; 
 import axios from "axios";
 import MainStoreForm from "./MainStoreForm.jsx";
 import StoreItems from "./StoreItems.jsx";
 import "./UserStoreInputCallAPIAndStoreItemCointainer.css";
-
+import PriceSliderInput from "./formInputButtons/PriceSliderInput";
 import { ProductTypeCatgory } from "../inputmaps/storeCatologueMaps/ProductTypeCatgoryItemsNavList.js";
 import { TaglistCatgoryItemsNavList } from "../inputmaps/storeCatologueMaps/TaglistCatgoryITemsNavList.jsx";
 import { BrandCatgory } from "../inputmaps/storeCatologueMaps/BrandCatgoryItemsNavList.js";
@@ -20,9 +20,12 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     const [price, setPrice, priceRef] = useStateRef("");
     const [alphabetical, setAlphabetical] = useState(false); 
     const [query, setQuery, queryRef] = useStateRef(""); 
+    const [tagValue, setTagValue, tagValueRef] = useStateRef(""); 
     const [errorAPI, setErrorAPI] = useState(false);
     const [alphabeticalText, setAlphabeticalText] = useState("Click to Sort A-Z"); 
-    const [count, setCount] =useState(0); 
+    const [count, setCount] = useState(0); 
+    const [tagsarray, setTagsArray, TagsArrayRef] = useStateRef([]);
+    const sortButtonRef = useRef(); 
 
     const BrandInput = (e) =>{
         setBranding(e.target.value);
@@ -30,6 +33,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
         console.log(productCatgorySelected);
         console.log(price);
         console.log(errorAPI);
+        console.log(tagValue);
         APIMAKEUPHEROCallFunction();
         
     }
@@ -150,8 +154,8 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
             const copyOfProducts = productItem;
             const orderedPrice = copyOfProducts.sort((a, b) => { 
-                let fa = a.brand,
-                    fb = b.brand;
+                let fa = a.name,
+                    fb = b.name;
                 
                 if (fa < fb) {
                     return -1;
@@ -165,6 +169,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
             setProductItem([...orderedPrice]); 
             setAlphabeticalText("Click to Sort A-Z");
             setAlphabetical(true); 
+            sortButtonRef.current.classList.add("clickedSortButton");
         renderStoreItems();
 
         }
@@ -173,8 +178,8 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
             const copyOfProducts = productItem;
             const orderedPrice = copyOfProducts.sort((a, b) => { 
-                let fa = a.brand,
-                    fb = b.brand;
+                let fa = a.name,
+                    fb = b.name;
                 
                 if (fa > fb) {
                     return -1;
@@ -186,6 +191,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
             })
 
             setProductItem([...orderedPrice]); 
+            sortButtonRef.current.classList.remove("clickedSortButton");
             setAlphabetical(false); 
             setAlphabeticalText("Click to Sort Z-A");
             renderStoreItems();
@@ -219,19 +225,40 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
             return (
 
-                <StoreItems productItem={productItemRef.current}/>
+                <StoreItems productItem={productItemRef.current} />
+          
             )
         }
        
     }
+
+  const tagArray = () => {  
+ 
     
+    if (!tagsarray.includes(tagValueRef.current)) {   
+        setTagsArray(tagsarray => [...tagsarray, tagValueRef.current]);
+        console.log(TagsArrayRef.current);
+    }
+
+    else {
+      
+        setTagsArray(tagsarray.filter(item => item !== tagValueRef.current));
+        console.log(TagsArrayRef.current);
+    }
+  }
     return (
         <section className="mainStoreCatologue">
             <Banner />
             <MainStoreForm APIMAKEUPHEROCallFunction={APIMAKEUPHEROCallFunction} slide={setPrice} ProductCatgoryInput={ProductCatgoryInput} productTypeRef={productTypeSelected} BrandInput={BrandInput} ProductTypeInput={ProductTypeInput} SearchInputAPI={SearchInputAPI} />
-            <button onClick={handleChangeOption}>{alphabeticalText}</button>
-            <TaglistInput/>
-            {renderStoreItems()}
+            <div className="secondForm">
+                <PriceSliderInput slide={setPrice} />
+                <button ref={sortButtonRef} className="sortButtonForm" onClick={handleChangeOption}>{alphabeticalText}</button>
+            </div>
+            <TaglistInput setTagValue={setTagValue} tagArray={tagArray}/>
+            <div className="mainStoreContainer">
+                {renderStoreItems()}
+            </div>
+            
         </section>
     )
 

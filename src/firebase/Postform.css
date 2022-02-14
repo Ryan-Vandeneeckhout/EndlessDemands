@@ -1,0 +1,102 @@
+.postFormWrapper input,
+.postFormWrapper select,
+.postFormWrapper textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.postFormWrapper {
+  width: 100%;
+  padding: 0 200px;
+}
+.postFormWrapper {
+  text-align: center;
+}
+.postFormWrapper textarea {
+  height: 200px;
+}
+.postFormWrapper input[type="submit"] {
+  background-color: goldenrod;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.postFormWrapper input[type="submit"]:hover {
+  background-color: green;
+}
+
+.PostWrapper {
+  padding: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: solid gold 5px;
+  margin-top: 50px;
+}
+
+.postReviewsList {
+  list-style: none;
+  padding: 0;
+}
+.postReviewsOne p {
+  font-size: 24px;
+}
+.postReviewsOne {
+  font-family: "Lato";
+  width: 100%;
+  border: lightgray 1px solid;
+  padding: 25px 100px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+}
+.postFormWrapper {
+  margin-bottom: 50px;
+}
+.productReviewh2 {
+  color: black;
+  font-size: 38px;
+  font-family: Raleway;
+  text-align: center;
+}
+.productReviewTitleContianer {
+  width: 100%;
+  border-bottom: solid gold 5px;
+  padding: 50px 0;
+}
+#sliderPost {
+  padding: 0;
+}
+#lol {
+  color: black;
+  font-size: 28px;
+  font-family: Raleway;
+  text-align: center;
+  color: red;
+  text-transform: capitalize;
+  margin: 20px;
+}
+@media only screen and (max-width: 825px) {
+  .postFormWrapper {
+    padding: 0;
+    margin: 0;
+  }
+  .PostWrapper {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .postReviewsOne {
+    padding: 40px;
+  }
+  .productReviewTitleContianer {
+    margin-bottom: 40px;
+  }
+}

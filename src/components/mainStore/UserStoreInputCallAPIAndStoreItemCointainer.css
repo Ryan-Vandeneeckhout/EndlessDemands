@@ -49,24 +49,31 @@ select {
 }
 .slider-parent {
   display: flex;
-  flex-direction: column-reverse;
+  background-color: whitesmoke;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  border: 3px solid #ccc;
+  border-radius: 34px;
+  padding: 12px 0px;
+  text-align: center;
+}
+.secondForm {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lightgray;
+  padding: 30px;
+}
+.sortButtonForm {
+  background-color: darkgreen;
+  border: 3px solid #ccc;
+  border-radius: 34px;
+  padding: 22px;
+  text-align: center;
+  color: white;
 }
 
-#price {
-  position: absolute;
-  top: 40px;
-}
-.sliderStore {
-  padding: 12px 0px;
-}
-.storeSlider {
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.clickedSortButton {
+  background-color: darkblue;
 }

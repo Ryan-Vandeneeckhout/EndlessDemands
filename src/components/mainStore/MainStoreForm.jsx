@@ -1,6 +1,5 @@
 import ProductTypeInput from "./formInputButtons/ProductTypeInput";
 import BrandInput from "./formInputButtons/BrandInput";
-import PriceSliderInput from "./formInputButtons/PriceSliderInput";
 import ProductCatgoryInput from "./formInputButtons/ProductCatgoryInput";
 import SearchInput from "./formInputButtons/SearchInput";
 
@@ -15,7 +14,6 @@ const MainStoreForm = (props) => {
             <BrandInput BrandInput={props.BrandInput} />
             <ProductTypeInput ProductTypeInputing={props.ProductTypeInput} />
             <ProductCatgoryInput ProductCatgoryInput={props.ProductCatgoryInput} productTypeRef={props.productTypeRef} />
-            <PriceSliderInput slide={props.slide} />
             <SearchInput SearchInputAPI={props.SearchInputAPI} />            
         </form>
         

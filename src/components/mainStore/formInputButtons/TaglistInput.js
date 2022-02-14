@@ -1,44 +1,22 @@
 import { TaglistCatgoryItemsNavList } from "../../inputmaps/storeCatologueMaps/TaglistCatgoryITemsNavList.jsx";
+import TaglistIndivdualButton from "./TaglistIndividualButton.jsx";
 import "./TaglistInput.css"; 
-import React from "react";
 
-class TaglistInput extends React.Component {
+const TaglistInput = (props) => {
        
-    shouldComponentUpdate() {
-        return false;
-    }
-
-    buttonBackground = (event) => {
-
-        let buttonSelectedFalse = document.getElementById(event.target.value);
-        buttonSelectedFalse.style.backgroundColor = "gold"; 
-
-    }
-
-    buttonBackgroundNormalize = (event) => {
-        let buttonSelectedFalse = document.getElementById(event.target.value);
-        buttonSelectedFalse.style.backgroundColor = "whitesmoke"; 
-    }
-    
-    render(){
-        return (
+    return (
       
-            <div className="taglistFormContainer">
-
-                {TaglistCatgoryItemsNavList.map((item, index) => {
-                    return (
-                        <button id={item.valueTaglistCategory} key={index} onClick={this.props.tagArray} className="tagListButton" value={item.valueTaglistCategory}>{item.valueTaglistCategory}
-                        </button>
-                    );
-                })}
-
-            
-          
-            </div>
+        <div className="taglistFormContainer">
         
-       
-        );
-    }
-  };
+            {TaglistCatgoryItemsNavList.map((item, index) => {
+                return (
+
+                    <TaglistIndivdualButton setTagValue={props.setTagValue} index={index} valueTaglistCategory={item.valueTaglistCategory} tagArray={props.tagArray}/>
+                );
+            })}
+        </div>
+    
+    )
+};
   
-  export default TaglistInput;
+export default TaglistInput;
