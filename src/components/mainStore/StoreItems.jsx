@@ -1,4 +1,5 @@
 import ProductItem from "../../pages/ProductItem";
+import { Link } from "react-router-dom";
 
 const StoreItems = (props) => {
 
@@ -17,6 +18,8 @@ const StoreItems = (props) => {
           <ul className="productListMakeupAPI">
           {props.productItem.map((item) => {
             return (
+
+              <Link to={`/${item.id}`}>
               <ProductItem
                 key={item.id}
                 brandname={item.brand}
@@ -28,7 +31,8 @@ const StoreItems = (props) => {
                 price={item.price}
                 rating={item.rating}
                 tags={item.tag_list}
-              />
+                />
+              </Link>
             );
           })}
         </ul>

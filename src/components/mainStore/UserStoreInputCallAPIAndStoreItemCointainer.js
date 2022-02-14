@@ -18,8 +18,10 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     const [productTypeSelected, setProductTypeSelected, productTypeRef] = useStateRef("");
     const [productCatgorySelected, setProductCatgorySelected, productCatgorySelectedRef] = useStateRef("");
     const [price, setPrice, priceRef] = useStateRef("");
+    const [alphabetical, setAlphabetical] = useState(false); 
     const [query, setQuery, queryRef] = useStateRef(""); 
     const [errorAPI, setErrorAPI] = useState(false);
+    const [alphabeticalText, setAlphabeticalText] = useState("Click to Sort A-Z"); 
     const [count, setCount] =useState(0); 
 
     const BrandInput = (e) =>{
@@ -34,13 +36,11 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
     const ProductTypeInput = (e) => {
         setProductTypeSelected(e.target.value);
-        console.log(productTypeRef.current);
         APIMAKEUPHEROCallFunction();
     }
 
     const ProductCatgoryInput = (e) => {
         setProductCatgorySelected(e.target.value);
-        console.log(productCatgorySelectedRef.current);
         APIMAKEUPHEROCallFunction();
     }
 
@@ -145,11 +145,14 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     const handleChangeOption = () => { 
 
             //a copy of all the data is made so it can be sorted alphabetically
-        const copyOfProducts = productItem;
-        const orderedPrice = copyOfProducts.sort((a, b) => { 
-            let fa = a.brand,
-                fb = b.brand;
-            
+        
+        if(alphabetical === false) {
+
+            const copyOfProducts = productItem;
+            const orderedPrice = copyOfProducts.sort((a, b) => { 
+                let fa = a.brand,
+                    fb = b.brand;
+                
                 if (fa < fb) {
                     return -1;
                 }
@@ -158,9 +161,37 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
                 }
                 return 0;
             })
-            //set product is updated to alphabetical order
-        setProductItem([...orderedPrice]); 
+             //set product is updated to alphabetical order false for decscending true for ascending// 
+            setProductItem([...orderedPrice]); 
+            setAlphabeticalText("Click to Sort A-Z");
+            setAlphabetical(true); 
         renderStoreItems();
+
+        }
+
+        else { 
+
+            const copyOfProducts = productItem;
+            const orderedPrice = copyOfProducts.sort((a, b) => { 
+                let fa = a.brand,
+                    fb = b.brand;
+                
+                if (fa > fb) {
+                    return -1;
+                }
+                if (fa < fb) {
+                    return 1;
+                }
+                return 0;
+            })
+
+            setProductItem([...orderedPrice]); 
+            setAlphabetical(false); 
+            setAlphabeticalText("Click to Sort Z-A");
+            renderStoreItems();
+        }
+        
+       
     }
 
     const renderStoreItems = () => {
@@ -198,7 +229,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
         <section className="mainStoreCatologue">
             <Banner />
             <MainStoreForm APIMAKEUPHEROCallFunction={APIMAKEUPHEROCallFunction} slide={setPrice} ProductCatgoryInput={ProductCatgoryInput} productTypeRef={productTypeSelected} BrandInput={BrandInput} ProductTypeInput={ProductTypeInput} SearchInputAPI={SearchInputAPI} />
-            <button onClick={handleChangeOption}>Click to sort alphabetical</button>
+            <button onClick={handleChangeOption}>{alphabeticalText}</button>
             <TaglistInput/>
             {renderStoreItems()}
         </section>
