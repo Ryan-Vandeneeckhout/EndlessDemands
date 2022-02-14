@@ -30,7 +30,7 @@ const BottomSiteSectionContainer = () => {
         </div>
       </div>
       <div className="credits">
-        <p>Created At Juno College of Technology by Ryan Van Den Eeckhout</p>
+        <p>Created by Ryan Van Den Eeckhout</p>
       </div>
     </section>
   );
