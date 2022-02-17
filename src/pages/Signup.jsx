@@ -1,6 +1,5 @@
 import { useState } from 'react'; 
 import { useSignup } from '../firebase/firebaseHooks/useSignup';
-import { useNavigate  } from "react-router-dom";
 
 export default function Signup() {
   const [email, setEmail] = useState('')

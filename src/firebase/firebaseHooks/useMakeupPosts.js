@@ -26,7 +26,7 @@ export const useCollection = (c, _q) => {
         })
         
         return () => unsub()
-}, [c])
+}, [c, q])
 
 return { posts }
 }
