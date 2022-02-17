@@ -18,6 +18,7 @@ import Login from './firebase/Login';
 import HandleNav from './HandleNav';
 import { useAuthContext } from './firebase/firebaseHooks/useAuthContext';
 import AccountSettingsMenu from './components/NavBar/AccountSettingsMenu';
+import ShoppingCart from './firebase/ShoppingCart';
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -65,7 +66,8 @@ function App() {
         </Routes>
         <PlayPauseMusicButton />
           <ScrollUpButton />
-          <BottomSiteSectionContainer/>
+          <BottomSiteSectionContainer />
+          {user && <ShoppingCart />}
       </BrowserRouter>
       
       )}

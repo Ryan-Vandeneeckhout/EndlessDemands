@@ -4,14 +4,14 @@ import { useAuthContext } from "./firebaseHooks/useAuthContext";
 export default function ShoppingCart() {
     
     const { user } = useAuthContext(); 
-  const { posts } = useCollection(``)
+    const { posts } = useCollection(`1028`, ['uid', '==', user.uid]);  
   
   const arrayOfPictures = () => {
   
 
-    if (posts === undefined || posts === null || posts.length === 0) { 
+    if (posts === undefined || posts === null || posts.length === 0 ) { 
 
-      return <h3>No User Reviews Found, Be the First To Rate!</h3>
+      return <h3>Shopping Cart Empty - Add Items to the Cart!</h3>
 
 
     }

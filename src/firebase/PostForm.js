@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+
+//Firebase Imports // 
 import { db } from "./config";
 import { collection, addDoc } from "firebase/firestore";
 import "./Postform.css";
@@ -20,6 +22,7 @@ export default function PostForm(props) {
       name: newPost,
       post: postContainer,
       rating: value,
+      uid: user.uid
     });
     setNewPost("");
     setPostContainer("");
