@@ -2,14 +2,15 @@ import { useState, useRef } from "react";
 import { db } from "./config";
 import { collection, addDoc } from "firebase/firestore";
 import "./Postform.css";
+import { useAuthContext } from "./firebaseHooks/useAuthContext";
 
 export default function PostForm(props) {
   const [newPost, setNewPost] = useState("");
   const [postContainer, setPostContainer] = useState("");
   const reviewRef = useRef(); 
+  const { user } = useAuthContext(); 
 
   let DataBaseDocProps = props.passedprop;
-  let Data = props.Products; 
   const [value, setValue] = useState(1);
 
   const handleSubmit = async (e) => {
@@ -19,7 +20,6 @@ export default function PostForm(props) {
       name: newPost,
       post: postContainer,
       rating: value,
-      Data,
     });
     setNewPost("");
     setPostContainer("");

@@ -670,7 +670,7 @@ const ProductPage = () => {
                 {renderColors()}
                 {renderTaglistHighlights()}
                 <div className='PostWrapper'>
-                    <Posts individualProducts={individualProducts} page={page} passedprops={itemid.itemid}/>
+                    <Posts page={page} passedprops={itemid.itemid}/>
                 </div>  
             </div>
       </div>

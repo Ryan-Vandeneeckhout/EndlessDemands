@@ -50,13 +50,14 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
     const APIMAKEUPHEROCallFunction = () => {
 
-        if (productTypeRef.current === "" && brandRef.current === "" && priceRef.current === "" && productCatgorySelectedRef.current === "") {
+        if (productTypeRef.current === "" && brandRef.current === "" && priceRef.current === "" && productCatgorySelectedRef.current === "" && TagsArrayRef.current === []) {
             
             setErrorAPI(true);
+            console.log(errorAPI);
         }
 
         else {
-        
+
             axios({
                 method: "GET",
                 url: ` https://makeup-api.herokuapp.com/api/v1/products.json`,
@@ -66,6 +67,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
                     brand: `${brandRef.current}`,
                     price_greater_than: `${priceRef.current}`,
                     product_category: `${productCatgorySelectedRef.current}`,
+                    product_tags: `${TagsArrayRef.current}`
                 },
             
             }).then((jsonResponse) => {
@@ -76,7 +78,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
                 }
 
                 else if (productItem.length === 0) {
-                    setProductItem("");
+                    setProductItem([]);
                     throw new Error(jsonResponse.statusText);
                 }
             
@@ -154,13 +156,13 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
             const copyOfProducts = productItem;
             const orderedPrice = copyOfProducts.sort((a, b) => { 
-                let fa = a.name,
-                    fb = b.name;
+                let pa = a.name,
+                    pb = b.name;
                 
-                if (fa < fb) {
+                if (pa < pb) {
                     return -1;
                 }
-                if (fa > fb) {
+                if (pa > pb) {
                     return 1;
                 }
                 return 0;
@@ -178,13 +180,13 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
 
             const copyOfProducts = productItem;
             const orderedPrice = copyOfProducts.sort((a, b) => { 
-                let fa = a.name,
-                    fb = b.name;
+                let pa = a.name,
+                    pb = b.name;
                 
-                if (fa > fb) {
+                if (pa > pb) {
                     return -1;
                 }
-                if (fa < fb) {
+                if (pa < pb) {
                     return 1;
                 }
                 return 0;
@@ -237,13 +239,22 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     
     if (!tagsarray.includes(tagValueRef.current)) {   
         setTagsArray(tagsarray => [...tagsarray, tagValueRef.current]);
+        APIMAKEUPHEROCallFunction(); 
         console.log(TagsArrayRef.current);
     }
 
     else {
       
         setTagsArray(tagsarray.filter(item => item !== tagValueRef.current));
-        console.log(TagsArrayRef.current);
+
+        if (tagsarray.length === 0) {
+
+            setProductItem([]);
+            
+        }
+        else {
+            APIMAKEUPHEROCallFunction(); 
+        }
     }
   }
     return (

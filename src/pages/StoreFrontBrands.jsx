@@ -10,27 +10,24 @@ const StoreFrontBrands = (props) => {
     const [clickedRight, setClickedRight] = useState(false); 
     const [arrayTwo, setArrayTwo] = useState(5); 
 
-        useEffect(() => {
-            axios({
-                method: "GET",
-                url: ` https://makeup-api.herokuapp.com/api/v1/products.json`,
-                responseType: "json",
-                params: {
-                    product_type: `${props.productType}`,
-                    price_greater_than: 0,
-                },
+    useEffect(() => {
+        axios({
+            method: "GET",
+            url: ` https://makeup-api.herokuapp.com/api/v1/products.json`,
+            responseType: "json",
+            params: {
+                product_type: `${props.productType}`,
+                price_greater_than: 0,
+            },
         
-            }).then((jsonResponse) => {
+        }).then((jsonResponse) => {
               
-                if (jsonResponse.length !== 0) {
-                    setIndividualProduct(jsonResponse.data);
-                }
+            if (jsonResponse.length !== 0) {
+                setIndividualProduct(jsonResponse.data);
+            }
         
-            })
-            console.log(individualProducts);
-        }, [props.productType, individualProducts])
-    
-    console.log(individualProducts);
+        })
+    }, [props.productType]);
     
     const renderProductMap = () => {
 

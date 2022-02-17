@@ -9,15 +9,19 @@ const StoreFrontHome = () => {
 
     const buttonOneClicked = () => {
 
-        image1.current.classList.add("Seen");
-        image2.current.classList.remove("Seen");
-
+        image2.current.classList.add("Seen");
+        image1.current.classList.remove("Seen");
+        buttonOne.current.classList.add("currentStoreFrontButtonClicked"); 
+        buttonTwo.current.classList.remove("currentStoreFrontButtonClicked"); 
     }
 
     const buttonTwoClicked = () => {
-        image2.current.classList.add("Seen");
-        image1.current.classList.remove("Seen");
+       
 
+        image1.current.classList.add("Seen");
+        image2.current.classList.remove("Seen");
+        buttonOne.current.classList.remove("currentStoreFrontButtonClicked"); 
+        buttonTwo.current.classList.add("currentStoreFrontButtonClicked"); 
     }
 
     return (

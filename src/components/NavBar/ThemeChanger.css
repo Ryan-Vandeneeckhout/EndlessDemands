@@ -35,7 +35,9 @@
 .MusicMenuButton:active {
   border: orangered solid 3px;
 }
-
+.accountSettings {
+  border: black solid 3px;
+}
 @keyframes opened {
   0% {
     width: 0;

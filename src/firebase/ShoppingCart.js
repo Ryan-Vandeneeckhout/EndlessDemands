@@ -1,11 +1,10 @@
 import { useCollection } from "./firebaseHooks/useMakeupPosts";
+import { useAuthContext } from "./firebaseHooks/useAuthContext";
 
-export default function PostList(props) {
+export default function ShoppingCart() {
     
-
-  let Check = props.Check; 
-
-  const { posts } = useCollection(`${Check}`)
+    const { user } = useAuthContext(); 
+  const { posts } = useCollection(``)
   
   const arrayOfPictures = () => {
   

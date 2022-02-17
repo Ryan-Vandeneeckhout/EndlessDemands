@@ -13,7 +13,7 @@
 }
 
 .upperSite ul {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,6 +26,14 @@
 .upperSite ul li {
   padding: 25px;
   margin: 0;
+  text-decoration: none;
+  padding: 0;
+  text-transform: uppercase;
+  color: var(--color-Nav-font);
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .upperSite ul a {
@@ -39,6 +47,9 @@
 }
 
 .upperSite ul li:hover a {
+  color: gold;
+}
+.upperSite ul li:hover {
   color: gold;
 }
 
@@ -79,6 +90,9 @@
   background-color: black;
   border: solid white 3px;
   cursor: pointer;
+}
+.not {
+  padding: 0;
 }
 @media only screen and (min-width: 626px) and (max-width: 1050px) {
   .upperSite {

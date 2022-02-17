@@ -4,9 +4,8 @@ import React from "react";
 
 export default function Posts(props) {
     
-    let Check = "1020"; 
     let page = props.page; 
-    let Products = props.individualProducts;
+
     
     
     const renderForm = () => {
@@ -17,7 +16,7 @@ export default function Posts(props) {
             
             return ( 
              <>
-                <PostForm Products={Products} passedprop={Check} />
+                <PostForm passedprop={props.passedprops} />
                 <div className="productReviewTitleContianer"> 
                     <h2 className="productReviewh2">Product Reviews</h2>
                 </div> 
@@ -31,7 +30,7 @@ export default function Posts(props) {
 
         <>
             {renderForm()}
-            <PostList Check={Check} page={page} />
+            <PostList Check={props.passedprops} page={page} />
         </>         
     
     );
