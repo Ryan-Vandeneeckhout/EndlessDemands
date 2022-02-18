@@ -45,6 +45,7 @@ const ProductItem = (props) => {
     return (
         <li >
             <div className="showContainer product">
+               
                 <div className="image">
                 <img src={props.imagealt} alt="Something Went Wrong"/>
                 </div>

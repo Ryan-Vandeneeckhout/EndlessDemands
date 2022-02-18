@@ -52,7 +52,7 @@ function App() {
       <BrowserRouter>
           <NavBarUpperSite AccountSettings={AccountSettings} mobileNav={mobileNav} MobileNavFunction={MobileNavFunction} ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
           <ThemeChanger showbox={showbox} />
-          <AccountSettingsMenu accountSettings={accountSettings}/>
+          <AccountSettingsMenu AccountSettings={AccountSettings} accountSettings={accountSettings}/>
         <NavMobile mobileNav={mobileNav} MobileNavFunction={MobileNavFunction}/>
         <Routes>
           <Route extact path='/' element={<HomePage />} />

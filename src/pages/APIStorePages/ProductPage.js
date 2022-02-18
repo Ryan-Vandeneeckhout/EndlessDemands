@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import Posts from '../../firebase/Posts';
+import ButtonLiked from '../LikedButton';
 import './ProductPage.css';
 
 const ProductPage = () => { 
@@ -658,6 +659,7 @@ const ProductPage = () => {
                 </div>
                 <div className="paragrapghContainerProductPage">
                     <h3 className="nameProduct">{name} W</h3>
+                    <ButtonLiked individualProducts={individualProducts}/>
                     <h4 className='productPageSubHeading'>Brought to you by - {brand}</h4>
                     {renderLongDescription()}
                     <p id="Sept" className="Sept"></p>

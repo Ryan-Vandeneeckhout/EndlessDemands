@@ -98,10 +98,27 @@ body {
 }
 .login {
   background-color: pink;
+  background-image: url("../public/homeImages/skincare-and-makeup-masterclass-16103432.a3d4da8c.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .signUp {
   background-color: #010b13;
 }
 .loggedOutPage {
   background-color: black;
+}
+.loginSignUpFormContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginSignUpFormContainer input {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
