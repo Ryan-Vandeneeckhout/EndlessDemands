@@ -96,7 +96,7 @@ const StoreFrontBrands = (props) => {
     }
     return (
 
-        <ul className="productListMakeupAPI">
+        <ul className="productListMakeupAPI storefront">
 
             <button className="buttonStoreFront Left" onClick={StoreFrontLeft}><i className="fas fa-play"></i></button>
       

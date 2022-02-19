@@ -13,9 +13,13 @@ const HomePage = () => {
             <Banner />
             <StoreFrontHome /> 
             <StoreFrontBrands productType={lipstick}/> 
-            <div className="borderBanner top" />
+            <div className="borderBanner top" >
+                <h2>Endless Demands Showcase Foundations</h2>
+            </div>
             <StoreFrontBrands productType={foundation} /> 
-            <div className="borderBanner bottom" />
+            <div className="borderBanner bottom" >
+                <h2>Brand Name Comestics Sale</h2>
+            </div>
         </section>
     )
 

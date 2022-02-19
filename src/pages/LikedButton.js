@@ -1,48 +1,31 @@
-import { useState, useRef } from 'react';
 import { db } from "../firebase/config"; 
 import { deleteDoc, setDoc, doc } from "firebase/firestore";
 import { useAuthContext } from "../firebase/firebaseHooks/useAuthContext";
 import useStateRef from 'react-usestateref'; 
+import './LikedButton.css';
 
 const ButtonLiked = (props) => {
 
-    const [buttonLiked, setButtonLiked] = useState(false); 
-    const [cartStateItems, setCartStateItems] = useState("Add to Cart"); 
     const [count, setCount, countRef] = useStateRef(0); 
     const [total, setTotal, totalRef] = useStateRef(0); 
-
-    let item = props.individualProducts; 
-    const addtoCartButtonRef = useRef(null); 
-
     const { api_featured_image, brand, name, price } = props.individualProducts;
-
     const { user } = useAuthContext(); 
 
     const writeUserData = async (event) => {
         
         event.preventDefault();
-        console.log(item); 
-        if (buttonLiked === false) {
-            
-
-            await setDoc(doc(db, `${user.uid}`, `${name}`), {
-                uid: user.uid,
-                name, brand, price, api_featured_image, quantity: count
-            });
-
-            addtoCartButtonRef.current.classList.add("green"); 
-            addtoCartButtonRef.current.classList.remove("blue"); 
-            setCartStateItems("Add to Cart"); 
-        }
-        
-        else {
-            await deleteDoc(doc(db, `${user.uid}`, `${name}`));
-            addtoCartButtonRef.current.classList.remove("green"); 
-            addtoCartButtonRef.current.classList.add("blue"); 
-            setCartStateItems("Remove from Cart"); 
-        }
-        setButtonLiked((buttonLiked) => !buttonLiked);
+        await setDoc(doc(db, `${user.uid}`, `${name}`), {
+            uid: user.uid,
+            name, brand, price, api_featured_image, quantity: count
+        });
       
+    }
+
+    const removeFromCart = async (event) => {
+        
+        event.preventDefault();
+        await deleteDoc(doc(db, `${user.uid}`, `${name}`));
+  
     }
 
     const countUp = () => {
@@ -75,11 +58,20 @@ const ButtonLiked = (props) => {
     return (
 
         <>
-        <button ref={addtoCartButtonRef} onClick={writeUserData}>{cartStateItems}</button>
-        <button onClick={countUp}>+</button>
-            <p>{count}</p>
-            <p>{total}</p>
-        <button onClick={countDown}>-</button>
+            <div className='buttonsProductPage'>
+                <div className='buttonsProductPageCartContainer'>
+                    <div className='buttonsProductPageCartAddToCart'>
+                        <button onClick={countDown}>-</button>
+                        <button onClick={writeUserData}>Add to Cart</button>
+                        <button onClick={countUp}>+</button>
+                    </div>
+                    <button onClick={removeFromCart}>Remove From Cart</button>
+                </div>
+                <div className='totalQuantity'>
+                    <p>Quantity: {count}</p>
+                    <p>Total: ${total}</p>   
+                </div>
+            </div>
         </>
     )
 }

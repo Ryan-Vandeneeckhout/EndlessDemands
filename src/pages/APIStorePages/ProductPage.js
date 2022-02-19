@@ -661,7 +661,6 @@ const ProductPage = () => {
                 </div>
                 <div className="paragrapghContainerProductPage">
                     <h3 className="nameProduct">{name} W</h3>
-                    <ButtonLiked individualProducts={individualProducts}/>
                     <h4 className='productPageSubHeading'>Brought to you by - {brand}</h4>
                     {renderLongDescription()}
                     <p id="Sept" className="Sept"></p>
@@ -669,6 +668,7 @@ const ProductPage = () => {
                     <p id="Eight" className="Eight"></p>
                     {renderPrice()}
                     {renderRating()}
+                    <ButtonLiked individualProducts={individualProducts}/>
                     <p className='storeLink'><Link to="/storecatalogue">Click to Go Back to Store</Link></p>
                 </div>
                 {renderColors()}

@@ -74,3 +74,9 @@
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+.storefront {
+  background-image: url("../../public/homeImages/bannerBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

@@ -6,14 +6,13 @@ const LogoutPage = () => {
     
     const { logout } = useLogout();
     const history = useNavigate();
-    const MINUTE_MS = 6000;
+    const MINUTE_MS = 4000;
     
     useEffect(() => {
         logout(); 
       
         const interval = setInterval(() => {
             history('/');
-            console.log('Logs every minute');
           }, MINUTE_MS);
 
 

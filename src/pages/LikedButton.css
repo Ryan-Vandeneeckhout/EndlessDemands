@@ -1,0 +1,14 @@
+.buttonsProductPageCartContainer {
+  display: flex;
+  flex-direction: row;
+}
+.buttonsProductPageCartAddToCart {
+  margin-right: 30px;
+}
+.totalQuantity {
+  display: flex;
+  flex-direction: row;
+}
+.totalQuantity p {
+  margin-right: 10px;
+}

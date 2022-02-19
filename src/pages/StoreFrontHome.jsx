@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const StoreFrontHome = () => { 
 
@@ -6,6 +6,7 @@ const StoreFrontHome = () => {
     const buttonTwo = useRef(); 
     const image1 = useRef();
     const image2 = useRef();
+    const [arrayOne, setArrayOne] = useState(true); 
 
     const buttonOneClicked = () => {
 
@@ -17,11 +18,37 @@ const StoreFrontHome = () => {
 
     const buttonTwoClicked = () => {
        
-
         image1.current.classList.add("Seen");
         image2.current.classList.remove("Seen");
         buttonOne.current.classList.remove("currentStoreFrontButtonClicked"); 
         buttonTwo.current.classList.add("currentStoreFrontButtonClicked"); 
+    }
+
+    const playButtonClicked = () => {
+        setTimeout(() => {
+    
+            ChangeProduct(); 
+              
+        }, 5000);
+            
+    } 
+
+    const ChangeProduct = () => { 
+        if (arrayOne === true) { 
+
+            buttonOneClicked();
+            setArrayOne((arrayOne) => !arrayOne);
+            playButtonClicked();
+        
+        }
+
+        else {
+
+            buttonTwoClicked();
+            setArrayOne((arrayOne) => !arrayOne);
+            playButtonClicked();
+        }
+
     }
 
     return (
@@ -32,7 +59,7 @@ const StoreFrontHome = () => {
             <div className="storeFrontbuttonsList">
                 <button aria-label="Push to See StoreFront Promoted Option One" className="storeFrontButton" onClick={buttonOneClicked} ref={buttonOne}></button>
                 <button aria-label="Push to See StoreFront Promoted Option Two" className="storeFrontButton" onClick={buttonTwoClicked} ref={buttonTwo}></button>
-                <button aria-label="Play Button for Store to show Two Different Promoted Projects" className="playButton"><i className="fas fa-play"></i></button> 
+                <button onClick={playButtonClicked} aria-label="Play Button for Store to show Two Different Promoted Projects" className="playButton"><i className="fas fa-play"></i></button> 
             </div>
         </div>
         <div className="Two">
@@ -46,10 +73,9 @@ const StoreFrontHome = () => {
                 <li>
                     <p>Hi</p>
                 </li>
-
-                </ul>
-                <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src="./homeImages/image4.jpg" />
-                <img ref={image2} className="Image Seen" src="./homeImages/frontStore.jpg" alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
+            </ul>
+            <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src="./homeImages/image4.jpg" />
+            <img ref={image2} className="Image Seen" src="./homeImages/frontStore.jpg" alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
         </div>
     </div>
 )    

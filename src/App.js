@@ -21,7 +21,7 @@ import AccountSettingsMenu from './components/NavBar/AccountSettingsMenu';
 import ShoppingCart from './firebase/ShoppingCart';
 
 function App() {
-  const { user, authIsReady } = useAuthContext()
+  const { user, authIsReady } = useAuthContext();
   const [showbox, setShowBox] = useState(false);
   const [mobileNav, setMobileNav] = useState(false); 
   const [accountSettings, setAccountSettings] = useState(false); 
