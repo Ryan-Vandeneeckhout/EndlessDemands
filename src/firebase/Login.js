@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLogin } from './firebaseHooks/useLogin.js';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -14,19 +15,15 @@ export default function Login() {
   return (
     <section className='loginSignUpFormSection'>
     <div className='loginSignUpFormContainer login'>
+        <form className="loginSignUpForm" onSubmit={handleSubmit}>
         <h2>Login</h2>
         {login && <h3>{success}</h3>}
-      <form className="loginSignUpForm" onSubmit={handleSubmit}>
-        <label>
-          <span>email:</span>
           <input
             required
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-        </label>
-        <label>
           <span>password:</span>
           <input
             required
@@ -34,8 +31,10 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-        </label>
-        <button>log in</button>
+          <div className='buttonListFormLogin'>
+            <button>Log In</button>
+            <Link to="/signup"><button>Create a New Account</button></Link>
+          </div>
           {error && <p>{error}</p>}
       </form>
     </div>

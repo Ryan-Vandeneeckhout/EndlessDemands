@@ -11,6 +11,7 @@ const NavBarUpperSite = (props) => {
                 <li><Link aria-label="Go to home page" to="/">Home</Link></li>
                 <li><Link to="/storecatalogue">Store <span>Catalogue</span></Link></li>
                 <li><Link to="/aboutpage">About <span>Page</span></Link></li>
+                <li><Link aria-label="Shopping Cart For Signed in Users" to="/shoppingcart">Shopping Cart</Link></li>
                 <li onClick={props.AccountSettings}>Account</li>  
             </ul>
             <button aria-label="Theme and Song Changer" onClick={props.ChangeStateFunction}  className={`themeClick${props.showbox ? " rotating" : " not"}`}>

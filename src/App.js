@@ -62,12 +62,12 @@ function App() {
           <Route path="/:itemid" element={<ProductPage />} />
           <Route path="api/sep/:productscurrentSkuskuId/:productId" element={<SephoaraPage />} />
           <Route extact path="/login" element={<Login/>} /> 
-          <Route extact path="/signUp" element={<Signup/>} />
+          <Route extact path="/signUp" element={<Signup />} />
+            {user && <Route extact path="/shoppingcart" element={<ShoppingCart />} />}
         </Routes>
-        <PlayPauseMusicButton />
+          <PlayPauseMusicButton />
           <ScrollUpButton />
           <BottomSiteSectionContainer />
-          {user && <ShoppingCart />}
       </BrowserRouter>
       
       )}

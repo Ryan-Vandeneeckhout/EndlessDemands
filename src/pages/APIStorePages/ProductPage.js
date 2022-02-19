@@ -640,6 +640,8 @@ const ProductPage = () => {
         }
     };
     useEffect(() => {
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         axios({
             url: `https://makeup-api.herokuapp.com/api/v1/products/${itemid.itemid}.json`,
         }).then((response) => {
@@ -667,7 +669,7 @@ const ProductPage = () => {
                     <p id="Eight" className="Eight"></p>
                     {renderPrice()}
                     {renderRating()}
-                    <p className='storeLink'><Link to="/API">Click to Go Back to Store</Link></p>
+                    <p className='storeLink'><Link to="/storecatalogue">Click to Go Back to Store</Link></p>
                 </div>
                 {renderColors()}
                 {renderTaglistHighlights()}

@@ -12,7 +12,10 @@ const TotalCart = (props) => {
 
 
     return (
-        <p>{total.toFixed(2)}</p>
+        <div className="totalCart">
+            <p>Total: ${total.toFixed(2)}</p>
+        </div>
+       
     )
 }
 export default TotalCart; 
