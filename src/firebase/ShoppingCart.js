@@ -15,6 +15,7 @@ export default function ShoppingCart() {
   const handleClick = async (e) => {
     
     setRemoveItem(e.target.value);
+    console.log(removeItem); 
 
     await deleteDoc(doc(db, `${user.uid}`, `${removeItemRef.current}`));
 
