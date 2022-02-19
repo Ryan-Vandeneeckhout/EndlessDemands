@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { db } from "../firebase/config"; 
-import { collection, deleteDoc, setDoc, doc } from "firebase/firestore";
+import { deleteDoc, setDoc, doc } from "firebase/firestore";
 import { useAuthContext } from "../firebase/firebaseHooks/useAuthContext";
 import useStateRef from 'react-usestateref'; 
 
