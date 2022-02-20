@@ -18,15 +18,15 @@ export const SongListMap = [
   {
     MusicMenuButton: "MusicMenuButton",
     music: "SB3",
-    songName: "",
-    hex_value: " #FFFD01",
+    songName: "Music of Heavan",
+    hex_value: " goldenrod",
     SongListLocation: "./SongsList/song3.mp3",
   },
   {
     MusicMenuButton: "MusicMenuButton",
     music: "SB4",
     songName: "Hot Like Wow",
-    hex_value: "#66FF00",
+    hex_value: "darkgreen",
     SongListLocation: "./SongsList/song4.mp3",
   },
   {

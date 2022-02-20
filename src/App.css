@@ -26,11 +26,11 @@ body {
 .pausePlayButton {
   position: fixed;
   color: white;
-  font-size: 48px;
+  font-size: clamp(2rem, 1.7662rem + 1.039vw, 3rem);
   bottom: 85px;
   right: 10px;
-  width: 80px;
-  height: 80px;
+  width: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
+  height: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   cursor: pointer;
@@ -54,11 +54,11 @@ body {
 .scrollUp {
   position: fixed;
   color: white;
-  font-size: 48px;
+  font-size: clamp(2rem, 1.7662rem + 1.039vw, 3rem);
   bottom: 185px;
   right: 10px;
-  width: 80px;
-  height: 80px;
+  width: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
+  height: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   cursor: pointer;
@@ -152,4 +152,8 @@ body {
 }
 a {
   text-decoration: none;
+  color: black;
+}
+p {
+  font-family: "Lato", Courier New, Courier, monospace;
 }

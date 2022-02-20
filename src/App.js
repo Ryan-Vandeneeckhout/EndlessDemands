@@ -62,7 +62,7 @@ function App() {
         <BrowserRouter>
           {/*Navigation for APP*/}
           <NavBarUpperSite AccountSettings={AccountSettings} mobileNav={mobileNav} MobileNavFunction={MobileNavFunction} ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
-          <ThemeChanger showbox={showbox} />
+          <ThemeChanger ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
           <AccountSettingsMenu AccountSettings={AccountSettings} accountSettings={accountSettings}/>
         <NavMobile mobileNav={mobileNav} MobileNavFunction={MobileNavFunction}/>
         <Routes>

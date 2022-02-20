@@ -31,10 +31,10 @@
   padding: 0;
   margin: 0;
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 .shoppingCartItem {
-  width: 900px;
+  width: 100%;
   height: 250px;
   display: flex;
   margin-left: 20px;
@@ -64,6 +64,23 @@
   width: 100%;
   height: auto;
 }
+.totalCheckOut {
+  margin-left: 50px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.totalCheckOut button {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(5, 5, 49);
+  border: solid gold 3px;
+  font-family: Lato;
+  cursor: pointer;
+  color: white;
+}
 .shoppingCartItem button {
   position: absolute;
   right: 0;
@@ -77,4 +94,13 @@
   background-color: black;
   color: white;
   cursor: pointer;
+}
+@media only screen and (max-width: 925px) {
+  .shoppingCartSection {
+    flex-direction: column;
+  }
+  .shoppingCartList {
+    width: 100%;
+    padding-right: 30px;
+  }
 }

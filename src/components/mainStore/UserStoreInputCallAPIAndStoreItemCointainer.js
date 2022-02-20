@@ -234,12 +234,12 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
       //If the User Wishes to Remove the Current Clicked Tag from the secelction Array
       setTagsArray(tagsarray.filter((item) => item !== tagValueRef.current));
       //If the User Removes all Tags input
-      if (tagsarray.length === 0) {
-        setProductItem([]);
+      if (tagsarray.length === 0 || tagsarray === []) {
+          setProductItem([]);
       }
       //If the Tags input is not zero after the User Remove a Tag input Update the Store Selection//
       else {
-        APIMAKEUPHEROCallFunction();
+          APIMAKEUPHEROCallFunction();
       }
     }
   };

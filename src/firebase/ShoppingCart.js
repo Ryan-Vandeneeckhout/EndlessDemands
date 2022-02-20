@@ -51,7 +51,10 @@ export default function ShoppingCart() {
               </li>
             ))}
           </ul>
-          <TotalCart posts={posts} />
+          <div className="totalCheckOut">
+            <TotalCart posts={posts} />
+            <button >Check Out</button>
+          </div>
         </>
       );
     }

@@ -17,7 +17,7 @@ export const useSignup = () => {
         setSuccess("Sign Up Successful");
       })
       .catch((err) => {
-        setError(err.message);
+        setError("Email or Password is Incorrect, Try Again!");
       });
   };
 
