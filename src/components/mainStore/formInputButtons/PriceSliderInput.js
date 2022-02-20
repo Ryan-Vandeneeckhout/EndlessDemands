@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 export default function PriceSliderInput(props) {
-  const [hello, onChange] = useState(0);
-
+  const [valuePrice, onChange] = useState(0);
+//Price Slider Component// 
   return (
     <div className="slider-parent">
+      {/*Price Slider Slide Bar JSX*/}
       <input
         className="sliderStore"
         id="price"
@@ -12,9 +13,9 @@ export default function PriceSliderInput(props) {
         type="range"
         min="0"
         max="75"
-        value={`${hello}`}
+        value={`${valuePrice}`}
         onChange={({ target: { value: radius } } ) => {
-          onChange(radius); props.slide(`${hello}`);
+          onChange(radius); props.slide(`${valuePrice}`);
 
         }}
       />
@@ -22,8 +23,9 @@ export default function PriceSliderInput(props) {
         className="storeSlider"
         id="slider"
       >
+          {/*Price Output*/}
         <p>
-      Price less than $${hello} Dollars
+      Price less than $${valuePrice} Dollars
         </p>
       </div>
     </div>

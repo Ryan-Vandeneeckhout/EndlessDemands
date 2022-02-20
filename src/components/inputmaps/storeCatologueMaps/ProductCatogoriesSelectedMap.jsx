@@ -1,31 +1,22 @@
 export const ProductCatogoriesSelectedMap = [
-    {
-    
-        nameProductBlushCategory: 'Product Category Selector',
-        valueProductBlushCategory: ''
+  //Product Catogories Array Values Map//
+  {
+    nameProductBlushCategory: "Product Category Selector",
+    valueProductBlushCategory: "",
+  },
 
-    },
+  {
+    nameProductBlushCategory: "All",
+    valueProductBlushCategory: "",
+  },
 
-    {
-    
-        nameProductBlushCategory: 'All',
-        valueProductBlushCategory: ''
+  {
+    nameProductBlushCategory: "Powder",
+    valueProductBlushCategory: "powder",
+  },
 
-    },
-
-    {
-    
-        nameProductBlushCategory: 'Powder',
-        valueProductBlushCategory: 'powder'
-
-    },
-
-    {
-    
-        nameProductBlushCategory: 'Cream',
-        valueProductBlushCategory: 'cream'
-
-    },
-
+  {
+    nameProductBlushCategory: "Cream",
+    valueProductBlushCategory: "cream",
+  },
 ];
-

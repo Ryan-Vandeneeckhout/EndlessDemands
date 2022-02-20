@@ -6,7 +6,7 @@ const QuotesApi = () => {
 
   const [quotes, setQuotes] = useState({});
   const [errorAPI, setErrorAPI] = useState("");
-
+ // UseEffect Call Once for a Random Quote in Banner//
     useEffect(() => {
 
       axios({
@@ -22,7 +22,7 @@ const QuotesApi = () => {
       
       }).catch(err => {
           if (err.response) { 
-            setErrorAPI("quoteAPIError");     
+            setErrorAPI("The Greatest Among Us Have Also Failed, Exigoan");     
         }
           
       })
@@ -32,14 +32,16 @@ const QuotesApi = () => {
   const { content, author } = quotes;
 
   const renderQuote = () => {
-    
+     // API Return Success //
     if (quotes.length > 0) {
       return (
       <><h3 className="titleQuote">{content} - {author}</h3></>
     )
 
     }  
+    
     else { 
+       //Return Error on API Failed//
       return (
         <p>{errorAPI}</p>
       )

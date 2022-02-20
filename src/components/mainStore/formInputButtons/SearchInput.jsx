@@ -1,6 +1,5 @@
 const SearchInput = (props) => {
-
-
+//Search Button User Input Compnent// 
     return (
         <div className="searchBar">
             <div className="searchIcon">

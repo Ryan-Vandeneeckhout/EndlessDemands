@@ -1,7 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth'; 
-
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+//Firestore Config File for Project Endless
 const firebaseConfig = {
   apiKey: "AIzaSyBW0RdFtVHwiQJvOIrfMpX5aoyhDQ6uUqU",
   authDomain: "endlessdemands-48ddc.firebaseapp.com",
@@ -9,13 +9,13 @@ const firebaseConfig = {
   storageBucket: "endlessdemands-48ddc.appspot.com",
   messagingSenderId: "602997578763",
   appId: "1:602997578763:web:ec071e232958671075bb0e",
-  measurementId: "G-L89BRPVJL9"
+  measurementId: "G-L89BRPVJL9",
 };
 
 initializeApp(firebaseConfig);
 
-const db = getFirestore(); 
+const db = getFirestore();
 
-const auth = getAuth(); 
+const auth = getAuth();
 
-export { db, auth }
+export { db, auth };

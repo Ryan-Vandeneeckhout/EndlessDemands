@@ -75,8 +75,13 @@
   transform: scaleX(-1);
 }
 .storefront {
-  background-image: url("../../public/homeImages/bannerBackground.jpg");
+  background-image: url("../../public/images/001.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+@media only screen and (max-width: 725px) {
+  .storefront {
+    display: none;
+  }
 }

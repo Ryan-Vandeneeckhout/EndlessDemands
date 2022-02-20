@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const MobileNav = (props) => {
-
+//Brings up Mobile Nav // 
     return (
         <section className="mobileNav">
             <nav className={`navMenuToggle${props.mobileNav ? " opened" : " close"}`} >

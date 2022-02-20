@@ -22,9 +22,9 @@ const BottomSiteSectionContainer = () => {
               opportunities. Thank you.
             </p>
             <div className="iconlListWrapper">
-              <a href="https://www.linkedin.com/in/ryanvandeneeckhout/"><i className="fab fa-linkedin"/></a>
-              <a href="https://github.com/Ryan-Vandeneeckhout"><i className="fab fa-github-square"/></a>
-              <a href="https://twitter.com/Traitor_Legion"><i className="fab fa-twitter-square"></i></a>
+              <a aria-label='Link to Ryan Van Den Eeckhout`s Linkedin Profile' href="https://www.linkedin.com/in/ryanvandeneeckhout/"><i className="fab fa-linkedin"/></a>
+              <a aria-label='Link to Ryan Van Den Eeckhout`s Github Profile' href="https://github.com/Ryan-Vandeneeckhout"><i className="fab fa-github-square"/></a>
+              <a aria-label='Link to Ryan Van Den Eeckhout`s Twitter Profile' href="https://twitter.com/Traitor_Legion"><i className="fab fa-twitter-square"></i></a>
             </div>
           </div>
         </div>

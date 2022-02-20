@@ -2,7 +2,9 @@ import React from "react";
 import { ProductCatogoriesSelectedMap } from "../../inputmaps/storeCatologueMaps/ProductCatogoriesSelectedMap.jsx";
 
 const ProductCatgoryInput = (props) => {
+  //Product Catpory Dynamic Gen From Product Type Component// 
   const renderProductCat = () => {
+    //If Product Type is Null// 
     if (props.productTypeRef === null || props.productTypeRef === "")
       return (
         <select
@@ -17,6 +19,7 @@ const ProductCatgoryInput = (props) => {
           </option>
         </select>
       );
+    //If Product Type Selected is blush 
     else if (props.productTypeRef === "blush") {
       return (
         <select
@@ -38,6 +41,7 @@ const ProductCatgoryInput = (props) => {
           })}
         </select>
       );
+          //If Product Type Selected is Bronzer
     } else if (props.productTypeRef === "bronzer") {
       return (
         <select
@@ -57,6 +61,7 @@ const ProductCatgoryInput = (props) => {
           </option>
         </select>
       );
+          //If Product Type Selected is Eyeliner 
     } else if (props.productTypeRef === "eyeliner") {
       return (
         <select
@@ -85,6 +90,7 @@ const ProductCatgoryInput = (props) => {
           </option>
         </select>
       );
+          //If Product Type Selected is Foundation// 
     } else if (props.productTypeRef === "foundation") {
       return (
         <select
@@ -125,6 +131,7 @@ const ProductCatgoryInput = (props) => {
           </option>
         </select>
       );
+          //If Product Type Selected is Lipstick
     } else if (props.productTypeRef === "lipstick") {
       return (
         <select
@@ -150,6 +157,7 @@ const ProductCatgoryInput = (props) => {
           </option>
         </select>
       );
+          //If Product Type Selected is Eyeshadow// 
     } else if (props.productTypeRef === "eyeshadow") {
       return (
         <select
@@ -175,6 +183,7 @@ const ProductCatgoryInput = (props) => {
           </option>
         </select>
       );
+          //If Product Type Selected is Unavaible
     } else {
       return (
         <select
@@ -190,7 +199,7 @@ const ProductCatgoryInput = (props) => {
       );
     }
   };
-
+//Conditonial Rendering for Product Catogory// 
   return <>{renderProductCat()}</>;
 };
 

@@ -177,7 +177,9 @@ textarea {
 }
 .bottomSite input[type="submit"] {
   background-color: goldenrod;
-  color: white;
+  color: black;
+  font-weight: 900;
+  letter-spacing: 1px;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;

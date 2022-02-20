@@ -98,7 +98,7 @@ body {
 }
 .login {
   background-color: pink;
-  background-image: url("../public/homeImages/skincare-and-makeup-masterclass-16103432.a3d4da8c.jpg");
+  background-image: url("../public/images/005.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -112,7 +112,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: lightgray;
   padding: 50px;
   color: black;
   text-transform: capitalize;
@@ -125,7 +125,7 @@ body {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid darkgray;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -136,11 +136,20 @@ body {
   margin-top: 10px;
   justify-content: space-between;
 }
+
 .buttonListFormLogin button {
   display: flex;
   flex-wrap: wrap;
   width: 150px;
   text-align: center;
   justify-content: center;
+  align-items: center;
+  text-decoration: none;
   padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  border: solid darkgray 2px;
+}
+a {
+  text-decoration: none;
 }

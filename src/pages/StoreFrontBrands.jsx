@@ -6,10 +6,11 @@ const StoreFrontBrands = (props) => {
 
     const [individualProducts, setIndividualProduct] = useState([]);
     const [arrayOne, setArrayOne] = useState(0);
+    // UseState for Buttons Left and Right// 
     const [clickedLeft, setClickedLeft] = useState(false);
     const [clickedRight, setClickedRight] = useState(false); 
     const [arrayTwo, setArrayTwo] = useState(5); 
-
+    //API call for Makeup Products// 
     useEffect(() => {
         axios({
             method: "GET",
@@ -19,7 +20,7 @@ const StoreFrontBrands = (props) => {
                 product_type: `${props.productType}`,
                 price_greater_than: 0,
             },
-        
+        //Return Products Specificed by Props and with a Price Greater then 0// 
         }).then((jsonResponse) => {
               
             if (jsonResponse.length !== 0) {
@@ -30,7 +31,7 @@ const StoreFrontBrands = (props) => {
     }, [props.productType]);
     
     const renderProductMap = () => {
-
+        //Error Handling for When the API Call Fails// 
         if (individualProducts === null || individualProducts === undefined || individualProducts === "" || individualProducts.length === 0);
 
         else if (individualProducts !== null || individualProducts !== undefined || individualProducts !== "" || individualProducts.length !== 0){
@@ -39,7 +40,7 @@ const StoreFrontBrands = (props) => {
                 <>
                     {individualProducts.slice(arrayOne, arrayTwo).map((item) => {
                         return (
-
+                        // Product Item Creator From API Props Passed // 
                         <ProductItem
                         key={item.id}
                         brandname={item.brand}
@@ -60,6 +61,8 @@ const StoreFrontBrands = (props) => {
             )
         }
     }
+
+    //Array Handler Button Right for StoreFront/HomePage //
     const StoreFrontRight = () => {
 
         setClickedRight((clickedRight) => !clickedRight); 
@@ -78,6 +81,9 @@ const StoreFrontBrands = (props) => {
         }
        
     }
+
+    
+    //Array Handler Button Left for StoreFront/HomePage //
     const StoreFrontLeft = () => {
 
         setClickedLeft((clickedLeft) => !clickedLeft); 
@@ -98,11 +104,12 @@ const StoreFrontBrands = (props) => {
 
         <ul className="productListMakeupAPI storefront">
 
-            <button className="buttonStoreFront Left" onClick={StoreFrontLeft}><i className="fas fa-play"></i></button>
+            {/*//Array Handler Button Right JSX for StoreFront/HomePage */}
+            <button aria-label='Click to scroll left on the display elments for more options' className="buttonStoreFront Left" onClick={StoreFrontLeft}><i className="fas fa-play"></i></button>
       
             {renderProductMap()}
-            
-            <button className="buttonStoreFront Right" onClick={StoreFrontRight}><i className="fas fa-play"></i></button>
+             {/*//Array Handler Button Left JSX for StoreFront/HomePage */}
+            <button aria-label='Click to scroll Right on the display elments for more options' className="buttonStoreFront Right" onClick={StoreFrontRight}><i className="fas fa-play"></i></button>
 
         </ul>
     )

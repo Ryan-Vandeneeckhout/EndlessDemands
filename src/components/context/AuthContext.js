@@ -2,6 +2,7 @@ import { createContext, useReducer, useEffect } from 'react'
 import { auth } from '../../firebase/config';
 import { onAuthStateChanged } from 'firebase/auth';
 
+//Firesbase Auth User 
 export const AuthContext = createContext()
 
 export const authReducer = (state, action) => {

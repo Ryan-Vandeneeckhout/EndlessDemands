@@ -1,24 +1,26 @@
-import { useState } from 'react';
-import { useLogin } from './firebaseHooks/useLogin.js';
-import { Link } from 'react-router-dom';
-
+import { useState } from "react";
+import { useLogin } from "./firebaseHooks/useLogin.js";
+import { Link } from "react-router-dom";
+//Login Page Logic componeent
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { error, login, success } = useLogin();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    login(email, password); 
-  }
-  
+    e.preventDefault();
+    login(email, password);
+  };
+
   return (
-    <section className='loginSignUpFormSection'>
-    <div className='loginSignUpFormContainer login'>
+    <section className="loginSignUpFormSection">
+      {/*Login Page JSX*/}
+      <div className="loginSignUpFormContainer login">
         <form className="loginSignUpForm" onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        {login && <h3>{success}</h3>}
+          <h2>Login</h2>
+          {login && <h3>{success}</h3>}
           <input
+            aria-label="email input"
             required
             type="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -26,20 +28,21 @@ export default function Login() {
           />
           <span>password:</span>
           <input
+            aria-label="password input"
             required
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
-          <div className='buttonListFormLogin'>
+          <div className="buttonListFormLogin">
             <button>Log In</button>
-            <Link to="/signup"><button>Create a New Account</button></Link>
+            <Link to="/signup">
+              <button>Create a New Account</button>
+            </Link>
           </div>
           {error && <p>{error}</p>}
-      </form>
-    </div>
-
+        </form>
+      </div>
     </section>
-    
-  )
+  );
 }

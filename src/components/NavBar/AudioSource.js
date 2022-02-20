@@ -1,11 +1,13 @@
 import { useRef } from "react";
 
 const AudioSource = (props) => {
-
+// Audio Item One Item Component// 
     const audioRef = useRef();
     let count = 0; 
 
     const songPlaying = () => {
+
+        //Pause Current Song if Clicked On Itself Button Function// 
 
         let currentSongPlaying = audioRef.current; 
 
@@ -16,6 +18,8 @@ const AudioSource = (props) => {
         }
 
         else {
+
+            //Pause current song and Play Another Song if Menu is Clicked// 
             
             let sounds = document.getElementsByTagName('audio');
             count++;
@@ -32,7 +36,8 @@ const AudioSource = (props) => {
     }
        
     return (
-     <>
+        <>
+        {/*One Button JSX*/}
         <button style={{ backgroundColor: `${props.color}` }}className={props.classesNames} onClick={songPlaying}>Song: {props.song}</button>
         <audio ref={audioRef}>
             <source src={props.src} />

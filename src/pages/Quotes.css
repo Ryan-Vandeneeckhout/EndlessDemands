@@ -4,6 +4,7 @@
   font-family: Raleway;
   text-align: center;
 }
+
 @media only screen and (max-width: 625px) {
   .titleQuote {
     display: none;

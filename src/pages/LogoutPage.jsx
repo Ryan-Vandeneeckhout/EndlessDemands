@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
 
 const LogoutPage = () => {
-    
+    //Logout Page JSX Handling// 
     const { logout } = useLogout();
     const history = useNavigate();
     const MINUTE_MS = 4000;
@@ -12,6 +12,7 @@ const LogoutPage = () => {
         logout(); 
       
         const interval = setInterval(() => {
+            //Go to Homepage after 4 secs// 
             history('/');
           }, MINUTE_MS);
 
@@ -23,7 +24,7 @@ const LogoutPage = () => {
     return (
         
         <section className="LogoutPageSection">
-
+            {/*Logout Page JSX*/}
             <div className="loginSignUpFormContainer loggedOutPage">
                 <h1>Logging Out</h1>
                 <h2>Redirecting User to HomePage When Done </h2>

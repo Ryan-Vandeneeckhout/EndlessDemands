@@ -66,6 +66,18 @@
   height: 60px;
   cursor: pointer;
 }
+
+.themeClick i {
+  background-size: cover;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: transparent;
+  background-image: url("../../../public/images/006.gif");
+}
+
 .NavMobile {
   font-size: 30px;
   border-radius: 90%;

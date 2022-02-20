@@ -4,7 +4,7 @@ import { auth } from '../config';
 import { signOut } from 'firebase/auth'; 
     
 export const useLogout = () => {
-
+//LogOutPage Firebase Logic 
     const [success, setSuccess] = useState(null); 
     const [error, setError] = useState(null); 
     

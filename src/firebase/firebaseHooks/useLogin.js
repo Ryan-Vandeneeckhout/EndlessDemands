@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useAuthContext } from './useAuthContext';
 
 export const useLogin = () => {
-
+//Login Page Logic Firebase Auth
     const [error, setError] = useState(null); 
     const [success, setSuccess] = useState(null); 
     const { dispatch } = useAuthContext()

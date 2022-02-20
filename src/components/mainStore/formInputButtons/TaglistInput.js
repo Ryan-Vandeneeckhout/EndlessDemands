@@ -5,7 +5,7 @@ import "./TaglistInput.css";
 const TaglistInput = (props) => {
        
     return (
-      
+      //Taglist Component Button JSX// 
         <div className="taglistFormContainer">
         
             {TaglistCatgoryItemsNavList.map((item, index) => {

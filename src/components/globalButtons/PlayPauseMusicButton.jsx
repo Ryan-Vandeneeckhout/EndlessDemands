@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 const PlayPauseMusicButton = () => {
+    //Music Global Button Component
 
     let [playMusicPause, setPlayMusicPause] = useState(true);
 
     const PlayPauseMusic = () => {
-        
+        //If Music is Playing click to Pause Function
         if (playMusicPause === true) {
             let sounds = document.getElementsByTagName('audio');
             for (let i = 0; i < sounds.length; i++) sounds[i].pause(); 
@@ -13,6 +14,7 @@ const PlayPauseMusicButton = () => {
             
 
         }
+        //Music is Paused Click to Play 
 
         else if (playMusicPause === false) {
 
