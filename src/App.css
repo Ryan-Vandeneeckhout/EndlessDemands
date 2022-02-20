@@ -104,6 +104,9 @@ body {
 }
 .signUp {
   background-color: #010b13;
+  background-image: url("../public/images/007.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .loggedOutPage {
   background-color: black;

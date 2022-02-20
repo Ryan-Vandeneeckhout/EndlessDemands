@@ -20,6 +20,7 @@ export default function Login() {
           <h2>Login</h2>
           {login && <h3>{success}</h3>}
           <input
+            name="email" id="email" autoComplete="on"
             aria-label="email input"
             required
             type="email"
@@ -28,6 +29,7 @@ export default function Login() {
           />
           <span>password:</span>
           <input
+            name="password" id="password" autoComplete="on"
             aria-label="password input"
             required
             type="password"

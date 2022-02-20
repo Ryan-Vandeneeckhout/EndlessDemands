@@ -15,11 +15,12 @@ export default function Signup() {
   return (
     <section className="loginSignUpFormSection">
       {/*Login Page JSX*/}
-      <div className="loginSignUpFormContainer login">
+      <div className="loginSignUpFormContainer signUp">
         <form className="loginSignUpForm" onSubmit={HandleSubmit}>
           <h2>Sign Up</h2>
           {success && <h3>{success}</h3>}
           <input
+             name="email" id="email" autoComplete="on"
             aria-label="email input"
             required
             type="email"
@@ -28,6 +29,7 @@ export default function Signup() {
           />
           <span>password:</span>
           <input
+             name="password" id="password" autoComplete="on"
             aria-label="password input"
             required
             type="password"
