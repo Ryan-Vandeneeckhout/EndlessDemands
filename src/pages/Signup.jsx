@@ -1,14 +1,19 @@
 import { useState } from 'react'; 
 import { useSignup } from '../firebase/firebaseHooks/useSignup';
+import { useNavigate  } from "react-router-dom";
 
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { error, signup, success } = useSignup();
+  const history = useNavigate();
+  const MINUTE_MS = 4000;
 
   const HandleSubmit = (e) => {
     e.preventDefault();
     signup(email, password); 
+
+  
 
   }
   
