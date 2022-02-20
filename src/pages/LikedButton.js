@@ -3,6 +3,7 @@ import { deleteDoc, setDoc, doc } from "firebase/firestore";
 import { useAuthContext } from "../firebase/firebaseHooks/useAuthContext";
 import useStateRef from 'react-usestateref'; 
 import './LikedButton.css';
+import { useState } from "react";
 
 const ButtonLiked = (props) => {
 //Shopping Cart Logic Handling Add to Cart// 
@@ -10,15 +11,23 @@ const ButtonLiked = (props) => {
     const [total, setTotal, totalRef] = useStateRef(0); 
     const { api_featured_image, brand, name, price } = props.individualProducts;
     const { user } = useAuthContext(); 
+    const [error, setError] = useState(null); 
 
     const writeUserData = async (event) => {
         
         event.preventDefault();
-        await setDoc(doc(db, `${user.uid}`, `${name}`), {
-            uid: user.uid,
-            name, brand, price, api_featured_image, quantity: count
-        });
-      
+        if (count === 0) {
+            setError("Sorry, Cannot have Zero Quantity in Cart");
+            await deleteDoc(doc(db, `${user.uid}`, `${name}`));
+        }
+
+        else {
+            await setDoc(doc(db, `${user.uid}`, `${name}`), {
+                uid: user.uid,
+                name, brand, price, api_featured_image, quantity: count
+            });
+            setError(""); 
+        }
     }
 //Remove from Shopping Cart Logic firestore// 
     const removeFromCart = async (event) => {
@@ -72,6 +81,7 @@ const ButtonLiked = (props) => {
                     <p>Quantity: {count}</p>
                     <p>Total: ${total}</p>   
                 </div>
+                <p>{error}</p>
             </div>
         </>
     )

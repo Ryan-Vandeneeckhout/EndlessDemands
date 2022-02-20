@@ -82,8 +82,8 @@ const StoreFrontHome = () => {
                 </li>
                 </ul>
                  {/* Images Left Box on Desktop Coloumn on Moblie*/}
-            <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src="./images/003.webp" />
-            <img ref={image2} className="Image Seen" src="./images/004.webp" alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
+            <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src={"./images/003.webp" ? "./images/003.webp":null}/>
+            <img ref={image2} className="Image Seen" src={"./images/004.webp" ? "./images/004.webp":null} alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
         </div>
     </div>
 )    

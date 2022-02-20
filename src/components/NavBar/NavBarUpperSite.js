@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./NavBarUpperSite.css";
 import { useAuthContext } from '../../firebase/firebaseHooks/useAuthContext.js';
-import ShoppingCartCounter from "./ShoppingCartCounter.jsx";
+import ShoppingCartCounter from "../../firebase/ShoppingCartCounter.jsx";
 
 const NavBarUpperSite = (props) => {
     

@@ -51,7 +51,7 @@ const ProductItem = (props) => {
                
                 <div className="image">
                 {/*API image for Makeup API 1 Item*/}
-                <img src={props.imagealt} alt="Something Went Wrong"/>
+                <img src={props.imagealt ? props.imagealt:null} alt="Something Went Wrong"/>
                 </div>
                 <div className="info-content">
                     <h3 className="productHeadingName">{`${props.name}`.replaceAll(`&trade;`, '').replaceAll('<BR>', ' ')}</h3>

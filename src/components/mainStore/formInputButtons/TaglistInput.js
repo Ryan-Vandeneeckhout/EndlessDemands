@@ -11,7 +11,7 @@ const TaglistInput = (props) => {
             {TaglistCatgoryItemsNavList.map((item, index) => {
                 return (
 
-                    <TaglistIndivdualButton setTagValue={props.setTagValue} index={index} valueTaglistCategory={item.valueTaglistCategory} tagArray={props.tagArray}/>
+                    <TaglistIndivdualButton setTagValue={props.setTagValue} key={index} valueTaglistCategory={item.valueTaglistCategory} tagArray={props.tagArray}/>
                 );
             })}
         </div>

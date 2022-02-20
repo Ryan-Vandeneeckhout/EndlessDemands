@@ -1,4 +1,4 @@
-import { useCollection } from "../../firebase/firebaseHooks/useMakeupPosts";
+import { useCollection } from "./firebaseHooks/useMakeupPosts";
 import { Link } from "react-router-dom";
 
 const ShoppingCartCounter = (props) => { 
