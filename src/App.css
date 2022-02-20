@@ -98,15 +98,21 @@ body {
 }
 .login {
   background-color: pink;
-  background-image: url("../public/images/005.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("../public/images/005.webp");
 }
 .signUp {
   background-color: #010b13;
   background-image: url("../public/images/007.webp");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.signUp:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("../public/images/007.webp");
+  transition: all 0.4s ease-in-out 0s;
 }
 .loggedOutPage {
   background-color: black;
@@ -152,6 +158,11 @@ body {
   background-color: whitesmoke;
   border-radius: 25px;
   border: solid darkgray 2px;
+  cursor: pointer;
+}
+.buttonListFormLogin button:hover {
+  background-color: black;
+  color: white;
 }
 a {
   text-decoration: none;
