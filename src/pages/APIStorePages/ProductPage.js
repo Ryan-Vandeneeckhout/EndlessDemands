@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Posts from "../../firebase/Posts";
 import ButtonLiked from "../LikedButton";
-import "./ProductPage.css";
+import "./ProductPage.scss";
 
 const ProductPage = () => {
   const [individualProducts, setIndividualProduct] = useState({});

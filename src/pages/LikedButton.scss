@@ -1,0 +1,62 @@
+@import "../variables";
+
+@mixin UpdateCartButtonsDefaultSettings {
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  color: white;
+}
+.buttonsProductPageCartContainer {
+  @include FlexRow;
+}
+.buttonsProductPageCartAddToCart {
+  margin-right: 30px;
+}
+.totalQuantity {
+  @include FlexRow;
+
+  p {
+    margin-right: 10px;
+  }
+}
+.plus {
+  background-color: green;
+  @include UpdateCartButtonsDefaultSettings;
+}
+.plus:hover {
+  background-color: white;
+  color: green;
+  border: purple solid 5px;
+}
+.minus {
+  background-color: red;
+  @include UpdateCartButtonsDefaultSettings;
+}
+
+.minus:hover {
+  background-color: white;
+  color: red;
+  border: purple solid 5px;
+}
+
+.updateCart {
+  width: 150px;
+  height: 35px;
+  background-color: gold;
+  cursor: pointer;
+}
+
+.updateCart:hover {
+  background-color: black;
+  color: gold;
+  border: purple solid 5px;
+}
+.removeFromCart {
+  background-color: rgb(191, 20, 39);
+  color: whitesmoke;
+  cursor: pointer;
+}
+.removeFromCart:hover {
+  color: rgb(191, 20, 39);
+  background-color: whitesmoke;
+}

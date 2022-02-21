@@ -2,7 +2,7 @@ import { db } from "../firebase/config";
 import { deleteDoc, setDoc, doc } from "firebase/firestore";
 import { useAuthContext } from "../firebase/firebaseHooks/useAuthContext";
 import useStateRef from "react-usestateref";
-import "./LikedButton.css";
+import "./LikedButton.scss";
 import { useState } from "react";
 
 const ButtonLiked = (props) => {
@@ -63,11 +63,11 @@ const ButtonLiked = (props) => {
         <div className="buttonsProductPageCartContainer">
           <div className="buttonsProductPageCartAddToCart">
             {/*Add and Remove Items to Cart JSX*/}
-            <button onClick={countDown}>-</button>
-            <button onClick={writeUserData}>Update Cart</button>
-            <button onClick={countUp}>+</button>
+            <button className="minus" onClick={countDown}>-</button>
+            <button className="updateCart" onClick={writeUserData}>Update Cart</button>
+            <button className="plus" onClick={countUp}>+</button>
           </div>
-          <button onClick={removeFromCart}>Remove From Cart</button>
+          <button className="removeFromCart" onClick={removeFromCart}>Remove From Cart</button>
         </div>
         {/*Total and Item Quantity Count on User Screen*/}
         <div className="totalQuantity">

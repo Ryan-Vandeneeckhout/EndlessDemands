@@ -1,26 +1,44 @@
 import { useCollection } from "./firebaseHooks/useMakeupPosts";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const ShoppingCartCounter = (props) => { 
+const ShoppingCartCounter = (props) => {
+  //Child Componet Drop Down to Fix if User Signs out While Shopping Cart has Items Fix //
+  const { posts } = useCollection(`${props.user.uid}`, [
+    "uid",
+    "==",
+    props.user.uid,
+  ]);
 
-    //Child Componet Drop Down to Fix if User Signs out While Shopping Cart has Items Fix // 
+  const location = useLocation();
 
-    const { posts } = useCollection(`${props.user.uid}`, ['uid', '==', props.user.uid]);
-   
-    const renderPosts = () => {
-        //Firestore Error Handling return Nothing if Null// 
+  //destructuring pathname from location
+  const { pathname } = location;
 
-        if (posts === null || posts === undefined || posts.length === 0 || posts === ""); 
-
-        else {
-            //Number of Items in Shopping Cart// 
-            return <span className="numberFix">{posts.length}</span>;
-            
-        }
+  //Javascript split method to get the name of the path in array
+  const splitLocation = pathname.split("/");
+  const renderPosts = () => {
+    //Firestore Error Handling return Nothing if Null//
+    if (
+      posts === null ||
+      posts === undefined ||
+      posts.length === 0 ||
+      posts === ""
+    );
+    else {
+      //Number of Items in Shopping Cart//
+      return <span className="numberFix">{posts.length}</span>;
     }
-    return (
-        <li><Link aria-label="Shopping Cart For Signed in Users" to="/shoppingcart">Shopping Cart {renderPosts()} </Link></li>
-    )
-}
+  };
+  return (
+    <li>
+      <Link aria-label="Shopping Cart For Signed in Users" className={splitLocation[1] === "shoppingcart" ? "active" : "not"} to="/shoppingcart">
+        <span className="iconNav">
+          <i className="fa-solid fa-basket-shopping" />
+        </span>
+        <span className="navText">Shopping Cart</span> {renderPosts()}
+      </Link>
+    </li>
+  );
+};
 
-export default ShoppingCartCounter; 
+export default ShoppingCartCounter;

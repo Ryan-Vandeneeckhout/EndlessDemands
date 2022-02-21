@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .MusicMenuToggle {
   width: 500px;
   flex-direction: column;
@@ -129,17 +131,26 @@
     z-index: 100;
     justify-content: center;
     background-color: black;
-  }
-  .navMenuToggle ul {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0;
-  }
-  .navMenuToggle a {
-    font-size: clamp(1.5rem, 1.1757rem + 1.6216vw, 3rem);
-    text-transform: uppercase;
-    animation: appear 2s;
+
+    ul {
+      @include FlexColumn;
+      padding: 0;
+
+      li {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 10% 0;
+        width: 100%;
+        height: 100px;
+
+        a {
+          font-size: clamp(1.5rem, 1.1757rem + 1.6216vw, 3rem);
+          text-transform: uppercase;
+          animation: appear 2s;
+        }
+      }
+    }
   }
   .navMenuToggle a:link {
     color: white;
@@ -148,14 +159,6 @@
   .navMenuToggle a:visited {
     color: white;
     text-decoration: none;
-  }
-  .navMenuToggle li {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 10% 0;
-    width: 100%;
-    height: 100px;
   }
   @keyframes appear {
     0% {

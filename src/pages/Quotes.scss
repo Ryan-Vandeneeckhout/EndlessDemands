@@ -1,8 +1,10 @@
+@import "../variables.scss";
+
 .titleQuote {
-  text-transform: capitalize;
+  @include FontSettingsParagraph;
   margin-top: 25px;
-  font-family: Raleway;
   text-align: center;
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width: 625px) {

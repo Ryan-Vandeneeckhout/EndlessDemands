@@ -1,57 +1,55 @@
+@import "../../variables.scss";
+
+.bottomSite-Wrapper {
+  padding: 3% 5%;
+  padding-bottom: 0;
+  @include FlexColumn;
+}
+
 .bottomSite {
   background-color: #8b0000;
   color: white;
   border-top: solid gold 5px;
-}
 
-.bottomSite h2 {
-  font-size: clamp(1.5rem, 1.0676rem + 2.1622vw, 3.5rem);
-  font-family: Raleway;
-  margin-bottom: 50px;
-  text-shadow: 5px 4px 0px black;
-}
+  h2 {
+    font-size: clamp(1.5rem, 1.0676rem + 2.1622vw, 3.5rem);
+    font-family: Raleway;
+    margin-bottom: 50px;
+    text-shadow: 5px 4px 0px black;
+  }
+  h3 {
+    font-size: clamp(1rem, 0.625rem + 1.6667vw, 2.5rem);
+    font-family: Raleway;
+    padding-bottom: 50px;
+    text-shadow: 5px 4px 0px black;
+  }
+  p {
+    margin: 0;
+  }
 
-.bottomSite h3 {
-  font-size: clamp(1rem, 0.625rem + 1.6667vw, 2.5rem);
-  font-family: Raleway;
-  padding-bottom: 50px;
-  text-shadow: 5px 4px 0px black;
-}
-.bottomSite-Wrapper {
-  padding: 3% 5%;
-  padding-bottom: 0;
-  display: flex;
-  flex-direction: column;
-}
-.bottomSite p {
-  margin: 0;
-}
-
-.bottomSite ul {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style: none;
-  margin: 0;
-  margin-bottom: 70px;
-  padding: 0;
+  ul {
+    width: 100%;
+    @include FlexRow;
+    align-items: center;
+    justify-content: space-evenly;
+    @include UlNormalize;
+    margin-bottom: 70px;
+    a {
+      text-decoration: none;
+      padding: 0;
+      text-transform: uppercase;
+      color: white;
+      font-family: Raleway;
+      font-weight: 500;
+      font-size: 24px;
+    }
+  }
 }
 
 .bottomSite ul li:hover a {
   color: gold;
 }
 
-.bottomSite ul a {
-  text-decoration: none;
-  padding: 0;
-  text-transform: uppercase;
-  color: white;
-  font-family: Raleway;
-  font-weight: 500;
-  font-size: 24px;
-}
 .bottomSiteWebsiteTitleContainer {
   width: 100%;
   display: flex;
@@ -92,10 +90,7 @@
   color: gold;
   cursor: pointer;
 }
-.iconlListWrapper {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 input,
 label,
 textarea {
@@ -110,38 +105,35 @@ textarea {
   left: 50%;
   border: solid Gold 4px;
   flex-direction: column;
+  margin-top: -150px;
+  margin-left: -200px;
 
-  margin-top: -150px; /* Negative half of height. */
-  margin-left: -200px; /* Negative half of width. */
+  p {
+    font-size: 18px;
+    line-height: 29px;
+    text-transform: capitalize;
+    font-family: Raleway;
+  }
 }
 
-.promptForm p {
-  font-size: 18px;
-  line-height: 29px;
-  text-transform: capitalize;
-  font-family: Raleway;
-}
 .promptFormWrapper {
+  @include FlexColumn;
+  @include Maxsize100;
   text-align: center;
   position: relative;
-  width: 100%;
-  height: 100%;
-  align-items: center;
   justify-content: center;
-  display: flex;
-  flex-direction: column;
   padding: 10px;
-}
 
-.promptFormWrapper button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: purple;
-  color: white;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+  button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: purple;
+    color: white;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
 }
 
 .promptFormWrapper button:hover {
@@ -205,13 +197,13 @@ textarea {
   order: 1;
   padding: 0 clamp(0rem, -0.8649rem + 4.3243vw, 4rem);
   border-right: goldenrod solid 4px;
+  p {
+    @include SmallHeading;
+    color: white;
+    line-height: 29px;
+  }
 }
-.contactMethods p {
-  font-size: 25px;
-  color: white;
-  line-height: 29px;
-  font-family: Raleway;
-}
+
 .contactWrapper {
   display: flex;
   flex-direction: row;
@@ -249,12 +241,10 @@ textarea {
   }
   .iconList {
     padding-bottom: 40px;
+    i {
+      color: gold;
+    }
   }
-
-  .iconList i {
-    color: gold;
-  }
-
   .iconList i:hover {
     color: white;
   }

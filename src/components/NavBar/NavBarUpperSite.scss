@@ -1,0 +1,146 @@
+@import "../../variables.scss";
+
+.upperSite {
+  @include FlexRow;
+  justify-content: flex-end;
+  background-color: var(--color-Nav);
+  border-bottom: goldenrod solid 4px;
+  z-index: 100;
+  position: fixed;
+  align-items: center;
+  padding: 0 5%;
+  height: 85px;
+  width: 100%;
+
+  ul {
+    @include FlexRow;
+    @include UlNormalize;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    li {
+      @include SmallHeading;
+      @include UlNormalize;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 25px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .notActive {
+      color: white;
+    }
+  }
+}
+.not {
+  color: white;
+}
+
+.upperSite ul li:hover a {
+  color: gold;
+}
+.upperSite ul li:hover {
+  color: gold;
+}
+
+.rotating {
+  transform: rotate(360deg);
+}
+.themeClick {
+  font-size: 30px;
+  border-radius: 90%;
+  border: none;
+  transition: ease-in-out 0.5s;
+  border: solid black 3px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  i {
+    background-size: cover;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: transparent;
+    background-image: url("../../../public/images/006.gif");
+  }
+}
+.themeClick:hover {
+  color: white;
+  background-color: black;
+  border: solid white 3px;
+  cursor: pointer;
+}
+.NavMobile {
+  font-size: 30px;
+  border-radius: 90%;
+  border: none;
+  transition: ease-in-out 0.5s;
+  border: solid black 3px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.NavMobile:hover {
+  color: white;
+  background-color: black;
+  border: solid white 3px;
+  cursor: pointer;
+}
+.not {
+  padding: 0;
+}
+.numberFix {
+  color: rgb(52, 240, 52);
+  font-family: "Times New Roman", Times, serif;
+}
+.iconNav {
+  margin-right: 10px;
+}
+@media only screen and (min-width: 1226px) and (max-width: 1325px) {
+  .upperSite ul {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1225px) {
+  .navText {
+    display: none;
+  }
+
+  .upperSite ul {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 626px) and (max-width: 1050px) {
+  .upperSite {
+    ul {
+      width: 75%;
+    }
+    li {
+      text-align: center;
+    }
+  }
+  .iconNav {
+    margin: 0 25px;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .upperSite {
+    justify-content: space-between;
+    height: 100px;
+    ul {
+      display: none;
+    }
+  }
+  .NavMobile {
+    display: flex;
+  }
+}
+.active {
+  color: rgb(52, 240, 52);
+}

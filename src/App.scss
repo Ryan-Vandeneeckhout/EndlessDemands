@@ -1,3 +1,22 @@
+@import "variables";
+
+@mixin GlobalButtonsSettings {
+  position: fixed;
+  align-items: center;
+  border: solid gold 2px;
+  border-radius: 90%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: clamp(2rem, 1.7662rem + 1.039vw, 3rem);
+  width: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
+  height: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
+  justify-content: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 html {
   --color-Nav: rgb(5, 5, 49);
   --color-Nav-font: white;
@@ -24,22 +43,9 @@ body {
   overflow-x: hidden;
 }
 .pausePlayButton {
-  position: fixed;
-  color: white;
-  font-size: clamp(2rem, 1.7662rem + 1.039vw, 3rem);
   bottom: 85px;
   right: 10px;
-  width: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
-  height: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
-  cursor: pointer;
-  border: solid gold 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 90%;
-  background-color: black;
+  @include GlobalButtonsSettings;
 }
 
 .pausePlayButton:hover {
@@ -52,29 +58,16 @@ body {
   transform: rotate(360deg);
 }
 .scrollUp {
-  position: fixed;
-  color: white;
-  font-size: clamp(2rem, 1.7662rem + 1.039vw, 3rem);
   bottom: 185px;
   right: 10px;
-  width: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
-  height: clamp(4rem, 3.7662rem + 1.039vw, 5rem);
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
-  cursor: pointer;
-  border: solid gold 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 90%;
-  background-color: black;
+  @include GlobalButtonsSettings;
 }
 
 .scrollUp:hover {
   color: gold;
-}
-.scrollUp:hover i {
-  animation: MoveUpDown 1s linear infinite;
+  i {
+    animation: MoveUpDown 1s linear infinite;
+  }
 }
 
 @keyframes MoveUpDown {
@@ -98,16 +91,14 @@ body {
 }
 .login {
   background-color: pink;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @include ImageCover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
     url("../public/images/005.webp");
 }
 .signUp {
   background-color: #010b13;
+  @include ImageCover;
   background-image: url("../public/images/007.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .signUp:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
@@ -118,9 +109,7 @@ body {
   background-color: black;
 }
 .loginSignUpFormContainer form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include FlexColumn;
   background-color: lightgray;
   padding: 50px;
   color: black;
@@ -139,8 +128,7 @@ body {
   box-sizing: border-box;
 }
 .buttonListFormLogin {
-  display: flex;
-  flex-direction: row;
+  @include FlexRow;
   width: 100%;
   margin-top: 10px;
   justify-content: space-between;
@@ -150,9 +138,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 150px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+  @include TextAliginCenter;
   text-decoration: none;
   padding: 10px;
   background-color: whitesmoke;
@@ -169,5 +155,5 @@ a {
   color: black;
 }
 p {
-  font-family: "Lato", Courier New, Courier, monospace;
+  @include FontSettingsParagraph;
 }

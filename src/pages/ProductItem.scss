@@ -1,13 +1,17 @@
-.image {
+@mixin Max100Size {
   width: 100%;
   height: 300px;
 }
 
-.image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
+.image {
+  @include Max100Size;
+
+  img {
+    @include Max100Size;
+    border-radius: 25px;
+  }
 }
+
 .productListMakeupAPI {
   display: flex;
   flex-direction: row;
@@ -21,19 +25,46 @@
   margin: 0;
   background-color: slategray;
   position: relative;
+
+  li {
+    list-style: none;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
+    width: 300px;
+    height: 500px;
+    padding: 10px;
+    border: solid lightgrey 2px;
+    border-radius: 25px;
+    background-color: white;
+    text-align: center;
+    margin: 20px 20px;
+  }
 }
+
+.productListMakeupAPI li:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+  border: solid goldenrod 5px;
+  transform: translateY(-5px);
+  background-color: black;
+  color: white;
+}
+
 .resultsNone {
   min-height: 50vh;
   height: 100%;
   background-color: rgb(5, 5, 49);
   align-items: flex-start;
   justify-content: center;
+  p {
+    font-size: 28px;
+    color: white;
+    font-family: Raleway;
+  }
 }
-.resultsNone p {
-  font-size: 28px;
-  color: white;
-  font-family: Raleway;
-}
+
 .initalPageLoad {
   min-height: 50vh;
   height: 100%;
@@ -45,30 +76,6 @@
   font-size: 28px;
   color: white;
   font-family: Raleway;
-}
-.productListMakeupAPI li {
-  list-style: none;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.77);
-  width: 300px;
-  height: 500px;
-  padding: 10px;
-  border: solid lightgrey 2px;
-  border-radius: 25px;
-  background-color: white;
-  text-align: center;
-  margin: 20px 20px;
-}
-
-.productListMakeupAPI li:hover {
-  transform: scale(1.03);
-  transition: all 0.3s ease;
-  border: solid goldenrod 5px;
-  transform: translateY(-5px);
-  background-color: black;
-  color: white;
 }
 
 .Left {

@@ -1,4 +1,4 @@
-import "./ThemeChanger.css";
+import "./ThemeChanger.scss";
 import SongList from "./SongList.jsx";
 
 const ThemeChanger = (props) => {

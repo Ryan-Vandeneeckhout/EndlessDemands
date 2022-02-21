@@ -1,6 +1,6 @@
 import { TaglistCatgoryItemsNavList } from "../../inputmaps/storeCatologueMaps/TaglistCatgoryITemsNavList.jsx";
 import TaglistIndivdualButton from "./TaglistIndividualButton.jsx";
-import "./TaglistInput.css"; 
+import "./TaglistInput.scss"; 
 
 const TaglistInput = (props) => {
        

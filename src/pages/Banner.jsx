@@ -1,5 +1,5 @@
 import QuotesApi from "./QuotesAPI.jsx";
-import "./Banner.css";
+import "./Banner.scss";
 
 const Banner = () => {
   //Banner Component that Holds Quote API

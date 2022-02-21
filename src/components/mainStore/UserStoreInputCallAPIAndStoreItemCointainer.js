@@ -7,7 +7,7 @@ import axios from "axios";
 //Store Items Import
 import StoreItems from "./StoreItems.jsx";
 import MainStoreForm from "./MainStoreForm.jsx";
-import "./UserStoreInputCallAPIAndStoreItemCointainer.css";
+import "./UserStoreInputCallAPIAndStoreItemCointainer.scss";
 //Input for Forms and Check Maps Imports//
 import PriceSliderInput from "./formInputButtons/PriceSliderInput";
 import { ProductTypeCatgory } from "../inputmaps/storeCatologueMaps/ProductTypeCatgoryItemsNavList.js";

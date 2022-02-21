@@ -1,25 +1,28 @@
+@import "../../variables.scss";
+
 .wrapperProductPage {
-  width: 100%;
-  height: 100%;
+  @include Maxsize100;
   background-color: white;
   padding: 2% 10%;
 }
 .ProductPageContainer {
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  @include FlexRow;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .imageContainerProductPage {
+  @include FlexColumn;
   width: 50%;
-  display: flex;
-  align-items: center;
   justify-content: center;
   height: 600px;
   margin-top: 100px;
   border-radius: 25px;
-  flex-direction: column;
+
+  img {
+    width: 400px;
+    height: 400px;
+  }
 }
 .imageContainerProductPage2 {
   margin-top: 100px;
@@ -29,44 +32,36 @@
   border-radius: 25px;
   padding: 10px;
   margin-bottom: 50px;
+
+  img {
+    @include Maxsize100;
+  }
 }
 
-.imageContainerProductPage2 img {
-  height: 100%;
-  width: 100%;
-}
-.imageContainerProductPage img {
-  width: 400px;
-  height: 400px;
-}
 .paragrapghContainerProductPage {
   width: 50%;
   margin-top: 100px;
 }
 .productPageParagraph {
-  font-family: Lato;
-  font-size: 20px;
+  @include TagListParagraph;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 .productParagraph {
-  font-family: Lato;
-  font-size: 20px;
-}
-.productPageParagraph a {
-  text-decoration: none;
-  color: black;
+  @include TagListParagraph;
 }
 .BrandProduct {
-  font-size: 28px;
-  font-family: Raleway;
+  @include MediumHeading;
   text-transform: capitalize;
 }
 .nameProduct {
-  font-family: "Raleway";
-  font-size: 38px;
+  @include LargeHeading;
   margin-bottom: 15px;
 }
 .productPageSubHeading {
-  font-size: 24px;
+  @include MediumHeading;
   text-transform: uppercase;
 }
 .coloursWrapper {
@@ -78,17 +73,17 @@
   padding: 0;
   width: 100px;
   margin: 3px;
+  p {
+    @include FontSettingsParagraph;
+    text-align: center;
+  }
 }
 
 .colourItem:hover {
   cursor: pointer;
   transform: scale(1.03);
 }
-.colourItem p {
-  text-align: center;
-  font-family: Lato;
-  font-size: 16px;
-}
+
 .colourCircle {
   height: 50px;
   width: 100%;
@@ -98,46 +93,35 @@
 }
 .taglist {
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  @include FlexRow;
   flex-wrap: wrap;
-}
-
-.taglist p {
-  font-family: "Lato";
-  font-size: 20px;
-}
-
-.taglist .lol {
-  outline: solid black 5px;
-  width: 250px;
-  text-align: center;
-  background-color: green;
-  color: white;
-}
-
-.taglist .No {
-  outline: solid black 5px;
-  color: white;
-  width: 250px;
-  text-align: center;
-  background-color: red;
+  p {
+    @include FontSettingsParagraph;
+    outline: solid black 5px;
+    color: white;
+    width: 250px;
+    text-align: center;
+  }
+  .lol {
+    background-color: green;
+  }
+  .No {
+    background-color: red;
+  }
 }
 .productPageBuyNowLink {
+  @include TagListParagraph;
   text-decoration: none;
   color: green;
-  font-family: "Lato";
-  font-size: 20px;
 }
 
 .productPageBuyNowLink:hover {
   color: blue;
 }
 .storeLink a {
+  @include TagListParagraph;
   text-decoration: none;
   color: black;
-  font-family: "Lato";
-  font-size: 20px;
 }
 
 .storeLink:hover a {
@@ -147,16 +131,11 @@
   font-family: "Lato";
   font-size: 24px;
 }
-.SeptPrice {
-  font-family: Raleway;
-  font-size: 14px;
-}
 .imageProductPage {
   width: 50%;
   display: flex;
   justify-content: center;
 }
-
 .green {
   background-color: green;
 }
@@ -172,7 +151,6 @@
     text-align: center;
     margin-top: 50px;
   }
-
   .productParagraph {
     text-align: left;
   }

@@ -1,5 +1,5 @@
 import Banner from "./Banner.jsx";
-import "./HomePage.css";
+import "./HomePage.scss";
 import StoreFrontHome from "./StoreFrontHome.jsx";
 import StoreFrontBrands from "./StoreFrontBrands.jsx";
 

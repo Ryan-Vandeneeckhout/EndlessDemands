@@ -1,0 +1,57 @@
+@mixin Maxsize100 {
+  width: 100%;
+  height: 100%;
+}
+@mixin FlexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin FlexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin TextAliginCenter {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+@mixin FontSettingsParagraph {
+  font-family: "Lato", Times New Roman, Times, serif;
+  font-size: 18px;
+}
+@mixin TagListParagraph {
+  font-family: "Lato", Times New Roman, Times, serif;
+  font-size: 20px;
+}
+
+@mixin SmallHeading {
+  font-family: "Raleway", Times New Roman, Times, serif;
+  font-size: 24px;
+}
+
+@mixin MediumHeading {
+  font-family: "Raleway", Times New Roman, Times, serif;
+  font-size: 28px;
+}
+
+@mixin LargeHeading {
+  font-family: "Raleway", Times New Roman, Times, serif;
+  font-size: 38px;
+}
+
+@mixin SectionHeading {
+  font-family: "Raleway", Times New Roman, Times, serif;
+  font-size: 24px;
+}
+
+@mixin UlNormalize {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin ImageCover {
+  background-size: cover;
+  background-repeat: no-repeat;
+}

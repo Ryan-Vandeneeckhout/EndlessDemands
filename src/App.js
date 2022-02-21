@@ -1,11 +1,11 @@
 //Default CSS and Global CSS // 
-import './App.css';
-import './Setup.css'; 
+import './App.scss';
+import './Setup.scss'; 
 //React Depends Imports
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 //Pages Imports// 
-import HomePage from './pages/HomePage.js';
+import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.js';
 import ProductPage from './pages/APIStorePages/ProductPage.js';
 import SephoaraPage from './pages/APIStorePages/SephoaraPage.js';
@@ -61,7 +61,7 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           {/*Navigation for APP*/}
-          <NavBarUpperSite AccountSettings={AccountSettings} mobileNav={mobileNav} MobileNavFunction={MobileNavFunction} ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
+          <NavBarUpperSite AccountSettings={AccountSettings} accountSettings={accountSettings} mobileNav={mobileNav} MobileNavFunction={MobileNavFunction} ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
           <ThemeChanger ChangeStateFunction={ChangeStateFunction} showbox={showbox} />
           <AccountSettingsMenu AccountSettings={AccountSettings} accountSettings={accountSettings}/>
         <NavMobile mobileNav={mobileNav} MobileNavFunction={MobileNavFunction}/>

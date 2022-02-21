@@ -1,4 +1,4 @@
-import "./BottomSiteSectionContainer.css";
+import "./BottomSiteSectionContainer.scss";
 import React from "react";
 import BottomOfSiteFrom from "./BottomSiteForm";
 
@@ -15,7 +15,7 @@ const BottomSiteSectionContainer = () => {
           <div className="contactMethods">
             <h3>Get in Touch</h3>
             <p>
-              Feel free to contact me regarding my projects, code or invite me
+              Hello there, feel free to contact me regarding my projects, code or invite me
               to any future opportunities that you think could benefit from my
               skillset or input. Thank you dear viewer for visiting my site
               Endless Demands and I hope to hear from you soon about any amazing
