@@ -97,16 +97,20 @@
   flex-wrap: wrap;
   p {
     @include FontSettingsParagraph;
-    outline: solid black 5px;
-    color: white;
-    width: 250px;
+
     text-align: center;
   }
   .lol {
     background-color: green;
+    outline: solid black 5px;
+    color: white;
+    width: 250px;
   }
   .No {
     background-color: red;
+    outline: solid black 5px;
+    color: white;
+    width: 250px;
   }
 }
 .productPageBuyNowLink {
@@ -141,6 +145,11 @@
 }
 .blue {
   background-color: blue;
+}
+.front-Page-FirebaseItems {
+  text-align: center;
+  @include MediumHeading;
+  margin: 50px 0;
 }
 @media only screen and (max-width: 825px) {
   .imageProductPage {

@@ -157,3 +157,23 @@ a {
 p {
   @include FontSettingsParagraph;
 }
+@media only screen and (max-width: 725px) {
+  .pausePlayButton {
+    top: 20px;
+    right: 30%;
+    z-index: 100;
+  }
+  .scrollUp {
+    top: 20px;
+    left: 30%;
+    z-index: 100;
+  }
+  body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

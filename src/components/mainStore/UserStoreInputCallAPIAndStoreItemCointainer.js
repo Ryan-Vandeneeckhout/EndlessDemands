@@ -201,7 +201,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     ) {
       return (
         <ul className="productListMakeupAPI resultsNone">
-          <p>No Results Found for the Current Selections, Please Try Again</p>
+          <h3>No Results Found for the Current Selections, Please Try Again</h3>
         </ul>
       );
     }
@@ -214,9 +214,9 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     ) {
       return (
         <ul className="productListMakeupAPI initalPageLoad">
-          <p>
+          <h3>
             Use the Form Inputs Above to Search For your Favourite Products!
-          </p>
+          </h3>
         </ul>
       );
     } else {

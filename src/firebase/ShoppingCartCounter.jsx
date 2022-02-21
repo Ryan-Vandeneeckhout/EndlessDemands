@@ -35,7 +35,7 @@ const ShoppingCartCounter = (props) => {
         <span className="iconNav">
           <i className="fa-solid fa-basket-shopping" />
         </span>
-        <span className="navText">Shopping Cart</span> {renderPosts()}
+        <span className="navText">Shopping <span className="secondNavText">Cart</span></span> {renderPosts()}
       </Link>
     </li>
   );

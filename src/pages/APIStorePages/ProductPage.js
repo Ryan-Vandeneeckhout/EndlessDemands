@@ -364,7 +364,6 @@ const ProductPage = () => {
       return (
         <div className="No">
           <p>USDA Organic</p>
-          <i className="fa-solid fa-square-check"></i>
           {renderNO()}
         </div>
       );

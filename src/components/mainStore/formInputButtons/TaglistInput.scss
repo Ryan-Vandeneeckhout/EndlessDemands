@@ -77,3 +77,8 @@
     background-color: gold;
   }
 }
+@media only screen and (max-width: 725px) {
+  .taglistFormContainer {
+    display: none;
+  }
+}

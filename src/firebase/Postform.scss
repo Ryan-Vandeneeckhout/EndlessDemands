@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .postFormWrapper input,
 .postFormWrapper select,
 .postFormWrapper textarea {
@@ -46,16 +48,16 @@
   list-style: none;
   padding: 0;
 }
-.postReviewsOne p {
-  font-size: 24px;
-}
 .postReviewsOne {
-  font-family: "Lato";
   width: 100%;
   border: lightgray 1px solid;
   padding: 25px 100px;
   background-color: whitesmoke;
   border-radius: 25px;
+  p {
+    font-size: 24px;
+    font-family: "Lato";
+  }
 }
 .postFormWrapper {
   margin-bottom: 50px;
@@ -74,24 +76,16 @@
 #sliderPost {
   padding: 0;
 }
-#lol {
-  color: black;
-  font-size: 28px;
-  font-family: Raleway;
-  text-align: center;
-  color: red;
-  text-transform: capitalize;
-  margin: 20px;
+.productRatingPost {
+  @include TagListParagraph;
 }
 @media only screen and (max-width: 825px) {
   .postFormWrapper {
-    padding: 0;
-    margin: 0;
+    @include PaddingMargin0;
   }
   .PostWrapper {
     border: none;
-    padding: 0;
-    margin: 0;
+    @include PaddingMargin0;
   }
   .postReviewsOne {
     padding: 40px;

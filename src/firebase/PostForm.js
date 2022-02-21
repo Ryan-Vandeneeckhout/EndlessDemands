@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 //Firebase Imports //
 import { db } from "./config";
 import { collection, addDoc } from "firebase/firestore";
-import "./Postform.css";
+import "./Postform.scss";
 import { useAuthContext } from "./firebaseHooks/useAuthContext";
 
 export default function PostForm(props) {
@@ -79,7 +79,7 @@ export default function PostForm(props) {
           ></textarea>
         </label>
 
-        <div>
+        <div className="productRatingPost">
           <h3 ref={reviewRef}>I Rate this Product {value} Stars!</h3>
           <input
             id="sliderPost"

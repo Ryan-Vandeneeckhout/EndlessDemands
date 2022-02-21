@@ -53,7 +53,7 @@ const NavBarUpperSite = (props) => {
                 <span className="iconNav">
                   <i className="fa-solid fa-book-open" />{" "}
                 </span>
-                <span className="navText">Store Catalogue</span>
+                <span className="navText">Store <span className="secondNavText">Catalogue</span></span>
               </Link>
             </li>
             <li>
@@ -64,7 +64,8 @@ const NavBarUpperSite = (props) => {
                 <span className="iconNav">
                   <i className="fa-solid fa-earth-americas" />{" "}
                 </span>
-                <span className="navText">About Page</span>
+                              <span className="navText">About <span className="secondNavText">Page
+                              </span></span>
               </Link>
             </li>
             {user && <ShoppingCartCounter user={user} />}

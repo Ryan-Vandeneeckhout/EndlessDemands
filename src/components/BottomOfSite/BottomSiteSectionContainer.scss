@@ -231,13 +231,19 @@ textarea {
     text-align: center;
     line-height: 29px;
   }
-  .bottomSite h3 {
-    font-size: clamp(2rem, 1.625rem + 1.6667vw, 2.5rem);
+  .bottomSite {
     text-align: center;
-  }
-  .bottomSite h2 {
-    font-size: clamp(2.5rem, 2.125rem + 1.6667vw, 3rem);
-    padding: 40px 0;
+    h2 {
+      font-size: clamp(2.5rem, 2.125rem + 1.6667vw, 3rem);
+      padding: 40px 0;
+      margin-bottom: 0;
+    }
+    h3 {
+      font-size: clamp(2rem, 1.625rem + 1.6667vw, 2.5rem);
+    }
+    p {
+      line-height: 135%;
+    }
   }
   .iconList {
     padding-bottom: 40px;

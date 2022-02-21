@@ -5,7 +5,7 @@ const SearchInput = (props) => {
             <div className="searchIcon">
               <i className="fas fa-search"></i>
             </div> 
-            <input className="customSelect" type="text" id="fname" name="fname" placeholder="Search for Products" onChange={props.SearchInputAPI} />
+            <input className="customSelect search" type="text" id="fname" name="fname" placeholder="Search for Products" onChange={props.SearchInputAPI} />
         </div>
     )
 }

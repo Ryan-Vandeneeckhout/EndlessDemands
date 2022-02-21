@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .storePageForm {
   display: flex;
   width: 100%;
@@ -32,9 +34,8 @@ select {
   text-transform: capitalize;
 }
 .searchBar {
-  display: flex;
+  @include FlexRow;
   align-items: center;
-  flex-direction: row;
 }
 .searchIcon {
   background-color: lightgray;
@@ -48,13 +49,11 @@ select {
   width: 300px;
 }
 .slider-parent {
-  display: flex;
+  @include FlexColumn;
   background-color: whitesmoke;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 3px solid #ccc;
   border-radius: 34px;
+  justify-content: center;
   padding: 12px 0px;
   text-align: center;
 }
@@ -73,7 +72,48 @@ select {
   text-align: center;
   color: white;
 }
-
+.info-content {
+  h3 {
+    font-family: "Raleway", Times New Roman, Times, serif;
+  }
+  p {
+    text-transform: capitalize;
+  }
+}
 .clickedSortButton {
   background-color: darkblue;
+}
+.mainStoreContainer {
+  @include Maxsize100;
+  background-color: rgb(5, 5, 49);
+  border-top: gold solid 5px;
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+}
+@media only screen and (max-width: 725px) {
+  .taglistFormContainer {
+    display: none;
+  }
+  .secondForm {
+    flex-direction: column;
+  }
+  .slider-parent {
+    margin-bottom: 20px;
+  }
+  .customSelect {
+    width: 45%;
+    margin-left: 10px;
+  }
+  .search {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .customSelect {
+    width: 100%;
+  }
+  .storePageForm {
+    justify-content: center;
+  }
 }
