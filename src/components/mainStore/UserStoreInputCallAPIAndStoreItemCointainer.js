@@ -1,7 +1,7 @@
 //Banner Import
 import Banner from "../../pages/Banner.jsx";
 //React Imports
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import useStateRef from "react-usestateref";
 import axios from "axios";
 //Store Items Import
@@ -51,6 +51,9 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
     setProductCatgorySelected(e.target.value);
     APIMAKEUPHEROCallFunction();
   };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   //API Makeup Call Function//
   const APIMAKEUPHEROCallFunction = () => {
     //If User Selects None but Trys to Call the API stops Call

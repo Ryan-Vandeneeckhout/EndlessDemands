@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const StoreFrontBrands = (props) => {
 
@@ -9,7 +10,7 @@ const StoreFrontBrands = (props) => {
     // UseState for Buttons Left and Right// 
     const [clickedLeft, setClickedLeft] = useState(false);
     const [clickedRight, setClickedRight] = useState(false); 
-    const [arrayTwo, setArrayTwo] = useState(5); 
+    const [arrayTwo, setArrayTwo] = useState(4); 
     //API call for Makeup Products// 
     useEffect(() => {
         axios({
@@ -41,6 +42,7 @@ const StoreFrontBrands = (props) => {
                     {individualProducts.slice(arrayOne, arrayTwo).map((item) => {
                         return (
                         // Product Item Creator From API Props Passed // 
+                        <Link to={`/${item.id}`}>
                         <ProductItem
                         key={item.id}
                         brandname={item.brand}
@@ -53,7 +55,7 @@ const StoreFrontBrands = (props) => {
                         rating={item.rating}
                         tags={item.tag_list}
                         />
-                    
+                        </Link>
                         );
                     })
                     }
@@ -69,15 +71,15 @@ const StoreFrontBrands = (props) => {
 
         if (clickedRight === true) {
             
-            setArrayOne(12); 
-            setArrayTwo(17); 
+            setArrayOne(10); 
+            setArrayTwo(14); 
 
         }
 
         else {
 
             setArrayOne(0); 
-            setArrayTwo(5); 
+            setArrayTwo(4); 
         }
        
     }
@@ -89,14 +91,14 @@ const StoreFrontBrands = (props) => {
         setClickedLeft((clickedLeft) => !clickedLeft); 
 
         if (clickedLeft === true) {
-            setArrayOne(6); 
-            setArrayTwo(11);
+            setArrayOne(5); 
+            setArrayTwo(9);
 
         }
         else {
             
             setArrayOne(0);
-            setArrayTwo(5);
+            setArrayTwo(4);
         }
      
     }
