@@ -4,7 +4,7 @@ import ProductCatgoryInput from "./formInputButtons/ProductCatgoryInput";
 import SearchInput from "./formInputButtons/SearchInput";
 
 const MainStoreForm = (props) => {
-  //Main Store PArent Componet Holder for Brand, Tag, ProductType, Product Cat and Search Input//
+  //Main Store Parent Componet Holder for Brand, Tag, ProductType, Product Cat and Search Input//
   const handleSubmit = (e) => {
     e.preventDefault();
   };

@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
+import { useCollection } from "../firebase/firebaseHooks/useMakeupPosts.js";
+import { Link } from "react-router-dom";
 
 const StoreFrontHome = () => { 
 
+    const { posts } = useCollection("New Arrivals");
     const buttonOne = useRef(); 
     const buttonTwo = useRef(); 
 
@@ -54,6 +57,22 @@ const StoreFrontHome = () => {
 
     }
 
+    const renderNewArrivalImages = () => {
+        if (posts === undefined || posts === null || posts.length === 0);
+        
+        else {
+            return (
+              <ul>
+                {posts.map((post) => (
+                  <Link to={`/${post.sid}`}>
+                    <img src={post.image} alt={post.alt}/>
+                  </Link>
+                ))}
+              </ul>
+            );
+          }
+    }
+
     return (
     
         <div className="storeFront">
@@ -69,19 +88,8 @@ const StoreFrontHome = () => {
             </div>
         </div>
             <div className="Two">
-                 {/* Firebase List New Products Here*/}
-            <ul>
-                <li>
-                    <p>Hi</p>
-                </li>
-                <li>
-                    <p>Hi</p>
-                </li>
-                <li>
-                    <p>Hi</p>
-                </li>
-                </ul>
-                 {/* Images Left Box on Desktop Coloumn on Moblie*/}
+                {/* Firebase List New Products Here*/}
+            {renderNewArrivalImages()}
             <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src={"./images/003.webp" ? "./images/003.webp":null}/>
             <img ref={image2} className="Image Seen" src={"./images/004.webp" ? "./images/004.webp":null} alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
         </div>

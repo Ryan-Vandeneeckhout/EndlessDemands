@@ -56,7 +56,6 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
   ul {
     position: absolute;
     left: 0;
-    border: green solid 5px;
     min-height: 100%;
     padding: none;
     list-style: none;
@@ -65,10 +64,19 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
     justify-content: space-evenly;
     margin: 0;
     width: 20%;
-    padding-inline-start: 0;
-    li {
+    padding-left: 20px;
+    a {
       width: 100%;
-      border: solid gold;
+      height: 33%;
+      border-radius: 90%;
+      img {
+        height: 140px;
+        width: 100%;
+        border-radius: 90%;
+        border: solid gold 5px;
+        display: block;
+        background-color: white;
+      }
     }
   }
 }
