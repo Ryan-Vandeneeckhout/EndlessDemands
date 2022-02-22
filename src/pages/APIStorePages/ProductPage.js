@@ -539,7 +539,7 @@ const ProductPage = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     axios({
-      url: `https://makeup-api.herokuapp.com/api/v1/products/${itemid.itemid}.json`,
+      url: `https://mycorsproxywinner.herokuapp.com/https://makeup-api.herokuapp.com/api/v1/products/${itemid.itemid}.json`,
     }).then((response) => {
       setIndividualProduct(response.data);
     });

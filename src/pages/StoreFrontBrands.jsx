@@ -15,7 +15,7 @@ const StoreFrontBrands = (props) => {
     useEffect(() => {
         axios({
             method: "GET",
-            url: ` https://makeup-api.herokuapp.com/api/v1/products.json`,
+            url: ` https://mycorsproxywinner.herokuapp.com/https://makeup-api.herokuapp.com/api/v1/products.json`,
             responseType: "json",
             params: {
                 product_type: `${props.productType}`,
