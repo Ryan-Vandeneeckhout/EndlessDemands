@@ -1,0 +1,61 @@
+@import "../variables.scss";
+.userSettings {
+  @include Maxsize100;
+  background-color: #151566;
+  color: white;
+  .h2titleContainer {
+    width: 100%;
+    padding: 5%;
+    padding-top: 140px;
+    @include MediumHeading;
+    text-align: center;
+  }
+}
+
+.userSettings-wrapper {
+  @include FlexRow;
+  @include Maxsize100;
+  justify-content: space-around;
+  padding: 0% clamp(2rem, -1.6234rem + 16.1039vw, 17.5rem);
+  padding-bottom: 5%;
+}
+.userSettingsFormChangeData {
+  @include FlexColumn;
+  padding: 5%;
+  height: 100%;
+  background-color: slategray;
+  border: solid gold 3px;
+  border-radius: 25px;
+  h3 {
+    @include MediumHeading;
+    padding-bottom: 15px;
+  }
+
+  input {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  button {
+    @include FontSettingsParagraph;
+    padding: 15px;
+    border: solid gold 3px;
+    border-radius: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  }
+}
+.userInfomationFirebase {
+  padding: 5%;
+  height: 100%;
+  background-color: black;
+  border: solid gold 3px;
+  border-radius: 25px;
+  h3 {
+    @include MediumHeading;
+  }
+  p {
+    padding: 5px;
+  }
+}

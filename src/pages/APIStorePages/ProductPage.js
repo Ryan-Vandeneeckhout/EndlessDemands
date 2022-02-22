@@ -34,6 +34,10 @@ const ProductPage = () => {
           {renderUSDAOrganic()}
           {renderVegan()}
           {renderAlcoholFree()}
+          {renderCrueltyFree()}
+          {renderOilFree()}
+          {renderSiliconeFree()}
+          {renderWaterFree()}
         </div>
       );
     }
@@ -382,6 +386,74 @@ const ProductPage = () => {
       return (
         <div className="No">
           <p>Alcohol Free</p>
+          {renderNO()}
+        </div>
+      );
+    }
+  };
+  const renderCrueltyFree = () => {
+    if (tag_list.includes("cruelty free")) {
+      return (
+        <div className="lol">
+          <p>Cruelty Free</p>
+          {renderYes()}
+        </div>
+      );
+    } else {
+      return (
+        <div className="No">
+          <p>Cruelty Free</p>
+          {renderNO()}
+        </div>
+      );
+    }
+  };
+  const renderOilFree = () => {
+    if (tag_list.includes("alcohol free")) {
+      return (
+        <div className="lol">
+          <p>Oil Free</p>
+          {renderYes()}
+        </div>
+      );
+    } else {
+      return (
+        <div className="No">
+          <p>Oil Free</p>
+          {renderNO()}
+        </div>
+      );
+    }
+  };
+  const renderSiliconeFree = () => {
+    if (tag_list.includes("alcohol free")) {
+      return (
+        <div className="lol">
+          <p>Silicone Free</p>
+          {renderYes()}
+        </div>
+      );
+    } else {
+      return (
+        <div className="No">
+          <p>Silicone Free</p>
+          {renderNO()}
+        </div>
+      );
+    }
+  };
+  const renderWaterFree = () => {
+    if (tag_list.includes("alcohol free")) {
+      return (
+        <div className="lol">
+          <p>Water Free</p>
+          {renderYes()}
+        </div>
+      );
+    } else {
+      return (
+        <div className="No">
+          <p>Water Free</p>
           {renderNO()}
         </div>
       );

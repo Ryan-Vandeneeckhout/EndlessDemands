@@ -4,7 +4,6 @@ import { useAuthContext } from "../../firebase/firebaseHooks/useAuthContext.js";
 import ShoppingCartCounter from "../../firebase/ShoppingCartCounter.jsx";
 
 const NavBarUpperSite = (props) => {
-
   const { user, authIsReady } = useAuthContext();
 
   const location = useLocation();
@@ -38,7 +37,7 @@ const NavBarUpperSite = (props) => {
                 to="/"
               >
                 <span className="iconNav">
-                  <i className="fa-solid fa-house-user" />{" "}
+                  <i className="fa-solid fa-house-user home" />{" "}
                 </span>
                 <span className="navText">Home</span>
               </Link>
@@ -51,9 +50,11 @@ const NavBarUpperSite = (props) => {
                 to="/storecatalogue"
               >
                 <span className="iconNav">
-                  <i className="fa-solid fa-book-open" />{" "}
+                  <i className="fa-solid fa-book-open darkred" />{" "}
                 </span>
-                <span className="navText">Store <span className="secondNavText">Catalogue</span></span>
+                <span className="navText">
+                  Store <span className="secondNavText">Catalogue</span>
+                </span>
               </Link>
             </li>
             <li>
@@ -62,10 +63,11 @@ const NavBarUpperSite = (props) => {
                 to="/aboutpage"
               >
                 <span className="iconNav">
-                  <i className="fa-solid fa-earth-americas" />{" "}
+                  <i className="fa-solid fa-earth-americas darkyellow" />{" "}
                 </span>
-                              <span className="navText">About <span className="secondNavText">Page
-                              </span></span>
+                <span className="navText">
+                  About <span className="secondNavText">Page</span>
+                </span>
               </Link>
             </li>
             {user && <ShoppingCartCounter user={user} />}
@@ -76,7 +78,7 @@ const NavBarUpperSite = (props) => {
               onClick={props.AccountSettings}
             >
               <span className="iconNav">
-                <i className="fa-solid fa-circle-user" />{" "}
+                <i className="fa-solid fa-circle-user darkpurple" />{" "}
               </span>
               <span className="navText">Account</span>
             </li>

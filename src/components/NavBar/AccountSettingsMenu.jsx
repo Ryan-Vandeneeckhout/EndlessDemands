@@ -25,7 +25,8 @@ const AccountSettingsMenu = (props) => {
                     {/*User Signed in Show Logout Button*/}
                     {user && <Link to="/logout"><button className="MusicMenuButton accountSettings">Logout</button></Link>}
                     <Link to="/login"><button className="MusicMenuButton accountSettings">Login <span>Page</span></button></Link>
-                    {/*User Noit Logged in Show Sign Up Button*/}
+                    {/*User Not Logged in Show Sign Up Button*/}
+                    {user && <Link to="/profilesettings"><button className="MusicMenuButton accountSettings">Profile Settings <span>Page</span></button></Link> }
                     {!user && <Link to="/signup"><button className="MusicMenuButton accountSettings">Signup <span>Page</span></button></Link> }
                     <button className="MusicMenuButton accountSettings" onClick={props.AccountSettings}>Close Account Settings Menu</button>
                     <button onClick={EmailUpdate}>Update Email</button>

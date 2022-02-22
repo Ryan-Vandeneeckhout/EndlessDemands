@@ -27,13 +27,17 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
   ] = useStateRef("");
   const [, setPrice, priceRef] = useStateRef("");
   const [alphabetical, setAlphabetical] = useState(false);
+  const [priceSort, setPriceSort] = useState(false); 
+  const [taglistVisbility, setTaglistVisbility] = useState(false); 
   const [query, setQuery, queryRef] = useStateRef("");
   const [, setTagValue, tagValueRef] = useStateRef("");
   const [, setErrorAPI] = useState(false);
   const [alphabeticalText, setAlphabeticalText] = useState("Click to Sort A-Z");
+  const [priceText, setPriceText] = useState("Click to Sort Low to High Price")
   const [count, setCount] = useState(0);
   const [tagsarray, setTagsArray, TagsArrayRef] = useStateRef([]);
   const sortButtonRef = useRef();
+  const sortPriceButtonRef = useRef(); 
 
   //If the Brand Input is Selected by User Change Value//
   const BrandInput = (e) => {
@@ -149,6 +153,52 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
         });
     }
   };
+  const handlePriceSortOption = () => {
+    //a copy of all the data is made so it can be sorted alphabetically
+    if (priceSort === false) {
+      const copyOfProducts = productItem;
+      const orderedPrice = copyOfProducts.sort((a, b) => {
+        let pa = a.price,
+          pb = b.price;
+
+        if (pa < pb) {
+          return -1;
+        }
+        if (pa > pb) {
+          return 1;
+        }
+        return 0;
+      });
+      //set product is updated to alphabetical order false for decscending true for ascending//
+      setProductItem([...orderedPrice]);
+      setPriceText("Click to Sort Low to High Price");
+      sortPriceButtonRef.current.classList.add("clickedSortButton");
+      setPriceSort(true);
+      renderStoreItems();
+    } else {
+      //a copy of all the data is made so it can be sorted alphabetically
+      const copyOfProducts = productItem;
+      const orderedPrice = copyOfProducts.sort((a, b) => {
+        let pa = a.price,
+          pb = b.price;
+
+        if (pa > pb) {
+          return -1;
+        }
+        if (pa < pb) {
+          return 1;
+        }
+        return 0;
+      });
+      //set product is updated to alphabetical order false for decscending true for ascending//
+      setProductItem([...orderedPrice]);
+      sortPriceButtonRef.current.classList.remove("clickedSortButton");
+      setPriceSort(false);
+      setPriceText("Click to Sort High to Low Price");
+      renderStoreItems();
+    }
+  };
+
   const handleChangeOption = () => {
     //a copy of all the data is made so it can be sorted alphabetically
     if (alphabetical === false) {
@@ -246,6 +296,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
       }
     }
   };
+   
   return (
     <section className="mainStoreCatologue">
       <Banner />
@@ -269,9 +320,13 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
         >
           {alphabeticalText}
         </button>
+        <button ref={sortPriceButtonRef} className="sortButtonForm" onClick={handlePriceSortOption}>{priceText}</button>
+        <button onClick={() => { setTaglistVisbility((taglistVisbility) => !taglistVisbility);}} className="sortButtonForm"
+        >Search by Product Tags</button>
       </div>
+
       {/*Taglist JSX*/}
-      <TaglistInput setTagValue={setTagValue} tagArray={tagArray} />
+      <TaglistInput taglistVisbility={taglistVisbility} setTagValue={setTagValue} tagArray={tagArray} />
       <div className="mainStoreContainer">{renderStoreItems()}</div>
     </section>
   );

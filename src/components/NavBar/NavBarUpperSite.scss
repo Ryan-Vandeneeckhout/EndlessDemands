@@ -24,8 +24,11 @@
       text-transform: uppercase;
       font-weight: 500;
       padding: 25px;
-      text-transform: uppercase;
       cursor: pointer;
+      i {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
     }
     .notActive {
       color: white;
@@ -158,4 +161,19 @@
 }
 .active {
   color: rgb(52, 240, 52);
+}
+.darkgreen {
+  color: green;
+}
+.darkpurple {
+  color: gold;
+}
+.darkred {
+  color: lightblue;
+}
+.darkyellow {
+  color: rgb(45, 184, 45);
+}
+.home {
+  color: purple;
 }

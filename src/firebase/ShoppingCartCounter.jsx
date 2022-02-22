@@ -33,7 +33,7 @@ const ShoppingCartCounter = (props) => {
     <li>
       <Link aria-label="Shopping Cart For Signed in Users" className={splitLocation[1] === "shoppingcart" ? "active" : "not"} to="/shoppingcart">
         <span className="iconNav">
-          <i className="fa-solid fa-basket-shopping" />
+          <i className="fa-solid fa-basket-shopping darkgreen" />
         </span>
         <span className="navText">Shopping <span className="secondNavText">Cart</span></span> {renderPosts()}
       </Link>

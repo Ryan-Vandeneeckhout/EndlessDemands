@@ -24,7 +24,7 @@ export const BrandCatgory = [
   },
 
   {
-    valueBrandCategory: "costal classic creation",
+    valueBrandCategory: "coastal classic creation",
   },
   {
     valueBrandCategory: "colourpop",
