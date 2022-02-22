@@ -33,13 +33,8 @@ export default function ProfileSettingsFirebase() {
   };
 
   const renderUserSettings = () => {
-    if (posts === undefined || posts === null || posts.length === 0) {
-      return (
-        <div className="emptyShoppingCart">
-          <h3>Something went Wrong, User Settings Not Found</h3>
-        </div>
-      );
-    } else {
+    if (posts === undefined || posts === null || posts.length === 0);
+   else {
       return (
         <>
           {posts.map((post) => (
