@@ -7,7 +7,7 @@ import { useState } from 'react';
 //Pages Imports// 
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.js';
-import ProductPage from './pages/APIStorePages/ProductPage.js';
+import HandleProductPage from './pages/HandleProductPage';
 import SephoaraPage from './pages/APIStorePages/SephoaraPage.js';
 import LogoutPage from './pages/LogoutPage';
 import Signup from './pages/Signup.jsx';
@@ -71,7 +71,7 @@ function App() {
           <Route extact path='/logout' element={<LogoutPage />} />
           <Route exact path='/storecatalogue' element={<HandleNav/>}/>
           <Route extact path='/aboutpage' element={<AboutPage />} />
-          <Route path="/:itemid" element={<ProductPage />} />
+          <Route path="/:itemid" element={<HandleProductPage />} />
           <Route path="api/sep/:productscurrentSkuskuId/:productId" element={<SephoaraPage />} />
           <Route extact path="/login" element={<Login/>} /> 
             <Route extact path="/signUp" element={<Signup />} />

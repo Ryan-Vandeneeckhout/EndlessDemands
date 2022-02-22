@@ -163,6 +163,13 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
     );
   background-position: 0 0, 24px 24px;
 }
+@media only screen and (max-width: 1025px) {
+  .Two {
+    ul {
+      display: none;
+    }
+  }
+}
 @media only screen and (max-width: 725px) {
   .storeFront {
     display: flex;
