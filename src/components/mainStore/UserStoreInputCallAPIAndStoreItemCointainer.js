@@ -255,6 +255,7 @@ const UserStoreInputCallAPIAndStoreItemCointainer = () => {
       return (
         <ul className="productListMakeupAPI resultsNone">
           <h3>No Results Found for the Current Selections, Please Try Again</h3>
+          <div className="ring"></div>
         </ul>
       );
     }

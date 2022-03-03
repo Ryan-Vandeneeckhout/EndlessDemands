@@ -36,11 +36,7 @@ const StoreFrontBrands = (props) => {
         if (individualProducts === null || individualProducts === undefined || individualProducts === "" || individualProducts.length === 0) {
             return (
 
-                <div className="loading">
-   <div class="ring">Loading
-                <span></span>
-              </div>
-                </div>
+               <div class="ring"></div>
              
             )
         }
