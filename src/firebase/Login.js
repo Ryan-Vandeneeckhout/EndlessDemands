@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useLogin } from "./firebaseHooks/useLogin.js";
+import { useLogout } from "./firebaseHooks/useLogout.js";
 import { Link } from "react-router-dom";
 //Login Page Logic componeent
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { error, login, success } = useLogin();
+  const { error, login, success } = useLogout();
 
   const handleSubmit = (e) => {
     e.preventDefault();

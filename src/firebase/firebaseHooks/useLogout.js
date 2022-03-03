@@ -1,4 +1,5 @@
 import { useAuthContext } from './useAuthContext';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../config';
 import { signOut } from 'firebase/auth'; 
@@ -24,7 +25,20 @@ export const useLogout = () => {
         })
     }
 
+    const login = (email, password) => {
+        setError(null)
+        setSuccess(null)
+        signInWithEmailAndPassword(auth, email, password)
+            .then((res) => {
+                dispatch({ type: 'LOGIN', payload: res.user })
+                setSuccess("Login Successful")
+            })
+            .catch((err) => {
+                setError(err.message)
+            })
+    }
+
  
 
-    return {logout, success, error}
+    return {logout, login, success, error}
 }
