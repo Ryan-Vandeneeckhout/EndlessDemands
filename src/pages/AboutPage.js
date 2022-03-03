@@ -53,12 +53,6 @@ const AboutPage = () => {
               src="./images/005.webp"
             />
           </div>
-          <div className="aboutPageContainer redAbout">
-            <h3>Songs List Attribution</h3>
-          </div>
-          <div className="aboutPageContainer redAbout">
-            <h3>See the List of Favourites Created by Our Vistors!</h3>
-          </div>
         </div>
       </div>
     </section>
