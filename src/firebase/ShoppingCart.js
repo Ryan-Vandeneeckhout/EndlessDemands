@@ -5,12 +5,15 @@ import { doc, deleteDoc } from "firebase/firestore";
 import "./ShoppingCart.css";
 import useStateRef from "react-usestateref";
 import { db } from "./config";
+import { AutoScrollfix } from "../pages/Autoscrollfix";
 
 export default function ShoppingCart() {
   //Shopping Cart Component
   const { user } = useAuthContext();
   const { posts } = useCollection(`${user.uid}`, ["uid", "==", user.uid]);
   const [removeItem, setRemoveItem, removeItemRef] = useStateRef(null);
+  
+  AutoScrollfix(); 
 
   const handleClick = async (e) => {
     //Remove Item from Cart

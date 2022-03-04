@@ -155,7 +155,7 @@ a {
   color: black;
 }
 p {
-  @include FontSettingsParagraph;
+  font-family: "Lato", Times New Roman, Times, serif;
 }
 @media only screen and (max-width: 725px) {
   .pausePlayButton {

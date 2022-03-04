@@ -30,6 +30,9 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
   min-height: $ButtonSize;
   cursor: pointer;
 }
+.storeFrontButton:hover {
+  background-color: green;
+}
 .currentStoreFrontButtonClicked {
   background-color: black;
   border: solid 2px white;
@@ -43,8 +46,11 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
   min-height: $ButtonSize;
   color: white;
 }
+.playButton:hover {
+  background-color: green;
+}
 .Two {
-  height: auto;
+  height: 500px;
   max-width: 100%;
   min-width: 50vw;
   display: flex;
@@ -52,6 +58,9 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
   background-color: darkblue;
   position: relative;
   overflow: hidden;
+  @include ImageCover;
+  background-repeat: no-repeat;
+  background-image: url("../../public/images/003.webp");
 
   ul {
     position: absolute;
@@ -70,20 +79,27 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
       height: 33%;
       border-radius: 90%;
       img {
-        height: 140px;
-        width: 100%;
+        height: clamp(6rem, 2.2222rem + 4.4444vw, 7.5rem);
+        width: clamp(6rem, 2.2222rem + 4.4444vw, 7.5rem);
         border-radius: 90%;
         border: solid gold 5px;
         display: block;
         background-color: white;
       }
+      img:hover {
+        -webkit-filter: brightness(70%);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
     }
   }
 }
 
-.Two img {
-  height: 100%;
-  max-width: 100%;
+.backgroundImageTwoPicture1 {
+  background-image: url("../../public/images/004.webp");
 }
 
 .Three {

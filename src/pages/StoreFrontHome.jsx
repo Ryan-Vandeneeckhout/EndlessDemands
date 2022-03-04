@@ -10,22 +10,19 @@ const StoreFrontHome = () => {
 
     //UseState for Displaying Image One and Image Two //  
     const image1 = useRef();
-    const image2 = useRef();
     const [arrayOne, setArrayOne] = useState(true); 
 
     //First Button Clicked Handler, Changes Image 1 to Two on User Input //   
     const buttonOneClicked = () => {
 
-        image2.current.classList.add("Seen");
-        image1.current.classList.remove("Seen");
+        image1.current.classList.add("backgroundImageTwoPicture1");
         buttonOne.current.classList.add("currentStoreFrontButtonClicked"); 
         buttonTwo.current.classList.remove("currentStoreFrontButtonClicked"); 
     }
  //Second Button Clicked Handler, Changes Image 2 to Image 1 on User Input //   
     const buttonTwoClicked = () => {
        
-        image1.current.classList.add("Seen");
-        image2.current.classList.remove("Seen");
+        image1.current.classList.remove("backgroundImageTwoPicture1");
         buttonOne.current.classList.remove("currentStoreFrontButtonClicked"); 
         buttonTwo.current.classList.add("currentStoreFrontButtonClicked"); 
     }
@@ -87,11 +84,9 @@ const StoreFrontHome = () => {
                 <button onClick={playButtonClicked} aria-label="Play Button for Store to show Two Different Promoted Projects" className="playButton"><i className="fas fa-play"></i></button> 
             </div>
         </div>
-            <div className="Two">
+            <div ref={image1} className="Two backgroundImageTwoPicture1">
                 {/* Firebase List New Products Here*/}
             {renderNewArrivalImages()}
-            <img ref={image1} alt=" Beautiful Woman having lipstick put on her with a brush" className="Image" src={"./images/003.webp" ? "./images/003.webp":null}/>
-            <img ref={image2} className="Image Seen" src={"./images/004.webp" ? "./images/004.webp":null} alt="Woman Having Beautiful Red Lipstick put on with a makeup brush"/>
         </div>
     </div>
 )    
