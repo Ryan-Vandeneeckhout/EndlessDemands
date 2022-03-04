@@ -12,11 +12,16 @@ const HomePage = () => {
     <section className="homePage">
       <Banner />
       <StoreFrontHome />
-      <StoreFrontBrands productType={lipstick} />
+      <div className="storeFrontRelativeContainer">
+        <StoreFrontBrands productType={lipstick} />
+        </div>
       <div className="borderBanner top">
         <h2>Endless Demands Showcase Foundations</h2>
       </div>
-      <StoreFrontBrands productType={foundation} />
+      <div className="storeFrontRelativeContainer">
+       <StoreFrontBrands productType={foundation} />
+      </div>
+    
       <div className="borderBanner bottom">
         <h2>Brand Name Comestics Sale</h2>
       </div>

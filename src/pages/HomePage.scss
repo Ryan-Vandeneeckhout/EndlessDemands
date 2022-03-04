@@ -49,6 +49,9 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
 .playButton:hover {
   background-color: green;
 }
+.storeFrontRelativeContainer {
+  position: relative;
+}
 .Two {
   height: 500px;
   max-width: 100%;
@@ -129,6 +132,8 @@ $ButtonSize: clamp(3rem, 2.7662rem + 1.039vw, 4rem);
 }
 .Left {
   left: 10px;
+  z-index: 888;
+  transform: scaleX(-1);
 }
 .Right {
   right: 10px;
